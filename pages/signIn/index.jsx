@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { transitApi } from '../../utils/AxiosInstance';
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 function SignIn(props) {
 
@@ -8,10 +9,11 @@ function SignIn(props) {
         email : "",
         password: ""
     });
-
+    const router = useRouter()
     const handleChange = (e) => {
         console.log(e.target.name, e.target.value)
         setSignInInput({ ...signInInput, [e.target.name]: e.target.value })
+        
     }
 
     return (
@@ -36,7 +38,7 @@ function SignIn(props) {
                     </form>
                     <div className="auth_form_cta">
                     <Link href="/signup" type="button" class="btn"><i class="fas fa-chevron-left"></i> Go Sign-up</Link>
-                    <button type="button" class="btn btn-danger">Sign In</button>
+                    <button onClick={()=>router.push('/')} type="button" class="btn btn-danger">Sign In</button>
                     </div>
                 </div>
                 <div className="auth_img col-lg-5">

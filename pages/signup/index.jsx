@@ -1,6 +1,8 @@
 import React from "react";
 import { useFormik } from "formik";
 import { transitApi } from '../../utils/AxiosInstance';
+import { errToast } from "../../components/common/TostMessages";
+import Link from "next/link";
 
 function Signup(props) {
 
@@ -76,12 +78,15 @@ function Signup(props) {
         },
         validate,
         onSubmit: values => {
+          console.log("Click")
+          errToast()
           alert(JSON.stringify(values, null, 2));
         },
       });
 
   return (
     <div className="auth_container_c sign_up">
+       
       <div className="auth_form col-lg-7">
         <div className="auth_form_heading_title">
           <h2 className="heding_l">Tell us little about yourself.</h2>
@@ -249,8 +254,10 @@ function Signup(props) {
           </div>
           <button  className="btn btn-danger" type="submit">Submit</button>
         </form>
+        <span>Already have an account? <Link href="/signIn" >Login</Link></span>
       </div>
       <div className="auth_img col-lg-5"></div>
+      
     </div>
   );
 }
