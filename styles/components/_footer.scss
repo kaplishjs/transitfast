@@ -1,0 +1,35 @@
+.footer_main{
+    background-color: $black_color;
+    color: $white_color;
+    
+    a{
+        text-decoration: none;
+        color: $white_color;
+    }
+}
+.content_footer{
+    padding: 4rem 0;
+}
+.link_list{
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}
+.footer_copy_right{
+    background-color: $white_color;
+    padding: 1rem 0;
+    *{
+        color: $black_color; 
+    }
+    .container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+       
+    }
+
+}
+.social_media_icon{
+    display: flex;
+    column-gap: .6rem;
+}

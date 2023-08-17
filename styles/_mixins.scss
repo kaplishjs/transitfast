@@ -1,0 +1,30 @@
+@mixin flex_center_center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@mixin flex_center{
+    display: flex;
+    align-items: center;
+}
+@mixin gridRep($mn,$mx,$cGap,$rGap){
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax($mn + px, $mx + fr));
+grid-column-gap: $cGap;
+grid-row-gap: $rGap;
+}
+@mixin border2($color){
+    border: 2px solid $color;      
+}
+@mixin border1($color){
+    border: 1px solid $color;      
+}
+@mixin card_radius($radius:20px){
+        border-radius: $card_radius;
+}
+// @mixin padding_clamp(){
+    
+// }
+@mixin card_shadow(){
+    box-shadow: -3.930000066757202px 12.34000015258789px 41px 0px rgba(0, 0, 0, 0.09);
+}

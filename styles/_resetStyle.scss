@@ -1,0 +1,28 @@
+// reset style for default bootstrap 
+.btn-danger {
+    --bs-btn-bg: #E21C21;
+    --bs-btn-border-color: #E21C21;
+    --bs-btn-disabled-bg: #E21C21;
+    --bs-btn-disabled-border-color: #E21C21;
+}
+.btn{
+    padding: 0.8rem 1.5rem;
+    border-radius: $global_radius;
+    min-width: 120px;
+    font-weight: 600;
+}
+
+.bg-danger {
+    background-color: #E21C21!important;
+    
+}
+.form-control{
+background-color: $Fields_Color;
+border-color: $Fields_Color;
+padding: 0.675rem 0.9rem;
+color: $grey_600;
+&::placeholder{
+color: $grey_600;
+font-weight: 500;
+}
+}

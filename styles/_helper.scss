@@ -1,0 +1,91 @@
+.heding_xl{
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+.heding_l{
+    font-size: 2rem;
+    font-weight: 700;
+}
+.heading_m{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.fc_primary{
+    color: $primary_color;
+}
+.fc_primary2{
+    color: $primary_color2;
+}
+.bg_prmary{
+    background-color: $primary_color;
+}
+.bg_prmary2{
+    background-color: $primary_color2;
+}
+.bg_felid_color{
+    background-color: $Fields_Color!important;
+}
+.bg_white{
+    background-color: $white_color!important;
+}
+
+.section_margin{
+    margin: 5rem 0;
+}
+.section_padding{
+   padding-left: 4rem; 
+}
+.section_padding_right{
+    padding-right: 4rem; 
+ }
+.small_title {
+    margin-bottom: .5rem;
+    color: $primary_color;
+}
+.large_title{
+    margin-bottom: 1.3rem;
+}
+.desc_pill{
+    min-width: auto!important   ;
+}
+
+.available_btn{
+border: 1px solid #61E781;
+color: #61E781;
+border-radius: 7px;
+font-size: .85rem;
+padding: 0.2rem 0.6rem;
+}
+
+.option_checkbox_wrapper{
+    input{
+        &[type="checkbox"]{
+            display: none;
+        }
+        &:checked{
+        &+{
+            .option_checkbox_btn{
+              background-color: $primary_color;
+              color: $white_color;
+              border-color: transparent;
+            }  
+        }
+        }
+    }
+    .option_checkbox_btn{
+        @include border1($primary_color2);
+        padding: .4rem 1.2rem;
+        display: inline-block;
+        border-radius: $global_radius;
+        cursor: pointer;
+        color: $black_color;
+    }
+}
+
+.chip_wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: .6rem;
+    row-gap: .7rem;
+}
