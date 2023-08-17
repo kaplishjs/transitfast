@@ -247,7 +247,7 @@ function Signup(props) {
               {/* <input type="text" className="form-control" placeholder="Address 2" /> */}
             </div>
           </div>
-          <button type="submit">Submit</button>
+          <button  className="btn btn-danger" type="submit">Submit</button>
         </form>
       </div>
       <div className="auth_img col-lg-5"></div>

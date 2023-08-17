@@ -4,6 +4,7 @@ import styles from "../styles/Home.module.css";
 import Layout from "../components/Layout";
 import Link from "next/link";
 import SearchOption from "../components/common/SearchOption";
+import ProductCard from "../components/common/ProductCard";
 
 export default function Signup() {
   return (
@@ -19,8 +20,8 @@ export default function Signup() {
                 <p>Our objective is to get you the wide variety of Affordable vehicle with the specifications you desire like Low rate finance options, Poor credit history and Short-term lease.</p>
 
                 <div className="d-flex gap-1">
-                  <button className="btn btn-danger">View Special Offers</button>
-                  <button type="button" className="btn btn-link">See all Vehicles</button>
+                  <Link href="/special-offers" className="btn btn-danger">View Special Offers</Link>
+                  <Link href="/search" type="button" className="btn btn-link">See all Vehicles</Link>
                 </div>
               </div>
               <div className="col-md-6 hero_img">
@@ -64,7 +65,7 @@ export default function Signup() {
                         <h5 className="small_title">About Us</h5>
                         <h2 className="heding_l large_title"><span className="fc_primary2">Transit</span><span className="fc_primary">Fast</span> Vehicle Solutions</h2>
                         <p>Buying a vehicle should never be difficult, or time-consuming when you have a busy working life. Whether you’re a first-time buyer, replacing your existing vehicle, or adding to your ever-growing fleet; Transitfast is here to make the experience as simplistic and transparent as possible so you can concentrate on what’s important to you.</p>
-                        <button className="btn btn-danger">About Us</button>
+                        <Link href="/about-us" className="btn btn-danger">About Us</Link>
                 </div>
               </div>
           </div>
@@ -81,85 +82,8 @@ export default function Signup() {
 
           <div className="product_itm_wrapper  ">
             <div className="container mb-5">
-            <div className="product_itm card">
-                <div className="card-body">
-                    <img className="img-fluid" src="assests/dummy_images/product_itm.png" alt="" srcset="" />
-                    <div className="product_itm_">
-                      <h5 className="product_itm_title">Vauxhall Corsa</h5>
-                      <span className="product_itm_desc">£498.00</span>
-                    </div>
-                    <Link href="/car-details" className="btn w-100 btn-outline-danger">View Deals</Link>
-                </div>
-            </div>
-            <div className="product_itm card">
-                <div className="card-body">
-                    <img className="img-fluid" src="assests/dummy_images/product_itm.png" alt="" srcset="" />
-                    <div className="product_itm_">
-                      <h5 className="product_itm_title">Vauxhall Corsa</h5>
-                      <span className="product_itm_desc">£498.00</span>
-                    </div>
-                    <button className="btn w-100 btn-outline-danger">View Deals</button>
-                </div>
-            </div>
-            <div className="product_itm card">
-                <div className="card-body">
-                    <img className="img-fluid" src="assests/dummy_images/product_itm.png" alt="" srcset="" />
-                    <div className="product_itm_">
-                      <h5 className="product_itm_title">Vauxhall Corsa</h5>
-                      <span className="product_itm_desc">£498.00</span>
-                    </div>
-                    <button className="btn w-100 btn-outline-danger">View Deals</button>
-                </div>
-            </div>
-            <div className="product_itm card">
-                <div className="card-body">
-                    <img className="img-fluid" src="assests/dummy_images/product_itm.png" alt="" srcset="" />
-                    <div className="product_itm_">
-                      <h5 className="product_itm_title">Vauxhall Corsa</h5>
-                      <span className="product_itm_desc">£498.00</span>
-                    </div>
-                    <button className="btn w-100 btn-outline-danger">View Deals</button>
-                </div>
-            </div>
-            <div className="product_itm card">
-                <div className="card-body">
-                    <img className="img-fluid" src="assests/dummy_images/product_itm.png" alt="" srcset="" />
-                    <div className="product_itm_">
-                      <h5 className="product_itm_title">Vauxhall Corsa</h5>
-                      <span className="product_itm_desc">£498.00</span>
-                    </div>
-                    <button className="btn w-100 btn-outline-danger">View Deals</button>
-                </div>
-            </div>   <div className="product_itm card">
-                <div className="card-body">
-                    <img className="img-fluid" src="assests/dummy_images/product_itm.png" alt="" srcset="" />
-                    <div className="product_itm_">
-                      <h5 className="product_itm_title">Vauxhall Corsa</h5>
-                      <span className="product_itm_desc">£498.00</span>
-                    </div>
-                    <button className="btn w-100 btn-outline-danger">View Deals</button>
-                </div>
-            </div>
-            <div className="product_itm card">
-                <div className="card-body">
-                    <img className="img-fluid" src="assests/dummy_images/product_itm.png" alt="" srcset="" />
-                    <div className="product_itm_">
-                      <h5 className="product_itm_title">Vauxhall Corsa</h5>
-                      <span className="product_itm_desc">£498.00</span>
-                    </div>
-                    <button className="btn w-100 btn-outline-danger">View Deals</button>
-                </div>
-            </div>
-            <div className="product_itm card">
-                <div className="card-body">
-                    <img className="img-fluid" src="assests/dummy_images/product_itm.png" alt="" srcset="" />
-                    <div className="product_itm_">
-                      <h5 className="product_itm_title">Vauxhall Corsa</h5>
-                      <span className="product_itm_desc">£498.00</span>
-                    </div>
-                    <button className="btn w-100 btn-outline-danger">View Deals</button>
-                </div>
-            </div>
+            
+          { Array.from({length:8}).map((el)=> <ProductCard/>)}
             </div>
             <button className="btn btn-danger mx-auto d-block"> View all Vehicles</button>
           </div>
@@ -207,7 +131,7 @@ export default function Signup() {
                         
                         
                         
-                        <button className="btn btn-danger">About Us</button> 
+                        <button className="btn btn-danger">Submit</button> 
                         </div>
 
                 
