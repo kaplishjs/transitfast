@@ -1,7 +1,6 @@
 import React from "react";
 import { useFormik } from "formik";
 import { transitApi } from '../../utils/AxiosInstance';
-import { errToast } from "../../components/common/TostMessages";
 import Link from "next/link";
 
 function Signup(props) {
@@ -79,7 +78,6 @@ function Signup(props) {
         validate,
         onSubmit: values => {
           console.log("Click")
-          errToast()
           alert(JSON.stringify(values, null, 2));
         },
       });
