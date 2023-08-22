@@ -65,12 +65,12 @@ export default function Signup() {
           <div className="container">
             <div className="row">
               <div className="col-md-6 hero_description">
-                <h1 className="heding_xl">The Driving <span className="fc_primary">Force Behind</span> You</h1>
-                <p>Our objective is to get you the wide variety of Affordable vehicle with the specifications you desire like Low rate finance options, Poor credit history and Short-term lease.</p>
+                <h1 className="heding_xl">The  <span className="fc_primary">Driving Force </span> <br /> Behind You</h1>
+                <p className="section_desc">Our objective is to get you the wide variety of Affordable vehicle with the specifications you desire like Low rate finance options, Poor credit history and Short-term lease.</p>
 
                 <div className="d-flex gap-1">
                   <Link href="/special-offers" className="btn btn-danger">View Special Offers</Link>
-                  <Link href="/search" type="button" className="btn btn-link">See all Vehicles</Link>
+                  <Link href="/search" type="button" className="btn btn-link fc_primary">See all Vehicles</Link>
                 </div>
               </div>
               <div className="col-md-6 hero_img">
@@ -112,8 +112,8 @@ export default function Signup() {
                 </div>
                 <div className="col-md-6 feature_description section_padding">
                         <h5 className="small_title">About Us</h5>
-                        <h2 className="heding_l large_title"><span className="fc_primary2">Transit</span><span className="fc_primary">Fast</span> Vehicle Solutions</h2>
-                        <p>Buying a vehicle should never be difficult, or time-consuming when you have a busy working life. Whether you’re a first-time buyer, replacing your existing vehicle, or adding to your ever-growing fleet; Transitfast is here to make the experience as simplistic and transparent as possible so you can concentrate on what’s important to you.</p>
+                        <h2 className="heding_l large_title"><span className="fc_primary2">Transit</span><span className="fc_primary">Fast</span> Vehicle <br />Solutions</h2>
+                        <p className="section_desc">Buying a vehicle should never be difficult, or time-consuming when you have a busy working life. Whether you’re a first-time buyer, replacing your existing vehicle, or adding to your ever-growing fleet; Transitfast is here to make the experience as simplistic and transparent as possible so you can concentrate on what’s important to you.</p>
                         <Link href="/about-us" className="btn btn-danger">About Us</Link>
                 </div>
               </div>
@@ -124,8 +124,8 @@ export default function Signup() {
 
       <section className="product_main_wrapper">
           <div className="container text-center">
-          <h5 className="small_title">About Us</h5>
-            <h2 className="heding_l large_title">We have different categories of vehicles</h2>
+          <h5 className="small_title">Our vehicles</h5>
+            <h2 className="heding_l large_title">We have different categories <br /> of vehicles</h2>
 
           </div>
 
@@ -170,7 +170,7 @@ export default function Signup() {
                   <div className="col-md-6 contact_us_desc section_padding">
                   <h5 className="small_title">Contact Us</h5>
                         <h2 className="heding_l large_title">How Can our team help you?</h2>
-                        <p>Contact us via email or phone and we’ll get back to you as soon as we can.</p>
+                        <p className="section_desc">Contact us via email or phone and we’ll get back to you as soon as we can.</p>
                        <form onSubmit={formik.handleSubmit}>
                         <div className="form">
                         <div className="mb-3">
@@ -192,7 +192,7 @@ export default function Signup() {
                          ) : null}
                         </div>
                         <div className="mb-3">
-                        <textarea className="form-control" id="description" name="description" onChange={formik.handleChange} value={formik.values.description} placeholder="Message" cols="30" rows="10"></textarea>
+                        <textarea className="form-control" id="description" name="description" onChange={formik.handleChange} value={formik.values.description} placeholder="Message" cols="30" rows="9"></textarea>
                         {formik.errors.description ? (
                            <div className="error_message">{formik.errors.description}</div>
                          ) : null}

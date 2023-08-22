@@ -31,5 +31,26 @@
 }
 .social_media_icon{
     display: flex;
-    column-gap: .6rem;
+    column-gap: .78rem;
+    // font-size: 1.8rem;
+    a{
+        color: $white_color;
+    }
+}
+.footer_newsletter{
+    p{
+        font-size: 1.25rem;
+    }
+    .form-control{
+        background-color: transparent;
+        border-color: $white_color;
+        color: $white_color;
+    }
+}
+.footer_copy_right {
+    .social_media_icon{
+        i{
+            font-size: 1.78rem;
+        }
+    }
 }

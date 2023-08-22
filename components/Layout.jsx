@@ -106,7 +106,7 @@ function Layout({children}) {
             </div>
             <div className="row">
               <div className="col-md-3">
-                <img src="assests/images/logo.png" alt="" srcset="" className="img-fluid" />
+                <img  src="assests/images/logo.png" alt="" srcset="" className="img-fluid footer_logo" />
                 </div>
               <div className="col-md-3">
                 <h3>Pages</h3>

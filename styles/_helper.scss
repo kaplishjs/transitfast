@@ -31,23 +31,29 @@
 }
 
 .section_margin{
-    margin: 5rem 0;
+    margin: 4.66rem 0;
 }
 .section_padding{
-   padding-left: 4rem; 
+   padding-left: 4.5rem; 
 }
 .section_padding_right{
     padding-right: 4rem; 
  }
 .small_title {
-    margin-bottom: .5rem;
+    margin-bottom: .75rem;
     color: $primary_color;
+    font-weight: 600;
 }
 .large_title{
     margin-bottom: 1.3rem;
 }
 .desc_pill{
     min-width: auto!important   ;
+}
+.section_desc{
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-bottom: 1.7rem;
 }
 
 .available_btn{

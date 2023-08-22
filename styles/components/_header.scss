@@ -3,11 +3,28 @@
    padding: 1rem; 
    background-color: $black_color;
    color: $white_color;
-}
-.main_header{
-   .main_header{
-      .nav-link{
-         padding: 0.5rem 1.4rem;
-      }
+   a{
+      text-decoration: none;
    }
 }
+   .main_header{
+      .navbar-brand{
+         img{
+            width: 6.6rem;
+            height: 6.6rem;
+            object-fit: contain;
+         }
+      }
+      ul.navbar-nav{
+         gap: .8rem;
+      }
+      .nav-link{
+         padding: .2rem;
+         color: $black_color ;
+         font-weight: 500;
+         &.active{
+            border-bottom: 2px solid $primary_color;
+            color: $primary_color;
+         }
+      }
+   }
