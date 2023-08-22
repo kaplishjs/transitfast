@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import { transitApi } from '../../utils/AxiosInstance';
 
 function resetPassword({ onClick, activeTab}) {
     const [otp, setOtp] = useState(['', '', '', '', '']);
@@ -45,10 +46,19 @@ function resetPassword({ onClick, activeTab}) {
         }
       };
 
-      const handleSubmit = (event) => {
-        event.preventDefault();
+      const handleSubmit = () => {
         // Here you can process the OTP value, e.g., send it to the server for verification
         console.log('OTP submitted:', otp.join(''));
+        const payload = {
+          otp: otp.join(''),
+          email: localStorage.getItem('email') || "avi.bhardwaj14321@gmail.com",
+      }
+        transitApi.post('/v1/users/verify-otp', payload).then((res)=>{
+          console.log("res", res);
+          onClick(activeTab+1);
+        }).catch((error)=> {
+          console.error('error', error);
+        })
       };
     
     return (
@@ -86,7 +96,7 @@ function resetPassword({ onClick, activeTab}) {
                     </form>
                     <div className="auth_form_cta">
                     <button type="button" class="btn" onClick={()=> onClick(activeTab-1)}><i class="fas fa-chevron-left"></i> Go Back</button>
-                    <button type="button" class="btn btn-danger" onClick={()=> onClick(activeTab+1)}>Continue</button>
+                    <button type="button" class="btn btn-danger" onClick={()=> handleSubmit()}>Continue</button>
                     </div>
                     <div className="auth_stepper">
                         <button className="btn ">1</button>
@@ -103,4 +113,4 @@ function resetPassword({ onClick, activeTab}) {
     );
 }
 
-export default resetPassword;
+export default resetPassword

@@ -1,0 +1,21 @@
+export const carData = {
+    "_id": "64d7f887dac27f9c82f6f215",
+    "adminId": "64d7f6f2936a1106c189db4a",
+    "vehicle_image": "uploads/vehicle_image/1691875463120_Screenshot from 2023-08-11 14-33-18.png",
+    "licence_plate": "hbcab",
+    "title": "testing",
+    "car_description": "testing",
+    "make": "testing making",
+    "year": 2021,
+    "model": "test",
+    "veriant_type": "test veriant",
+    "mileage": 12,
+    "engine_size": "1500cc",
+    "color": "white",
+    "transmission": "menual",
+    "fuel": "petrol",
+    "price": 1000000,
+    "createdAt": "2023-08-12T21:24:23.139Z",
+    "updatedAt": "2023-08-12T21:24:23.139Z",
+    "__v": 0
+}

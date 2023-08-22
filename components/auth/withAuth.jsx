@@ -7,7 +7,7 @@ const withAuth = Component => {
   const Auth = (props) => {
     // Login data added to props via redux-store (or use react context for example)
     // const { isLoggedIn } = props;
-    const  isLoggedIn  = false;
+    const  isLoggedIn  = true;
 
     // If user is not logged in, return login component
     if (!isLoggedIn) {

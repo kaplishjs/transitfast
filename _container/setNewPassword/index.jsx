@@ -1,6 +1,7 @@
 import React from 'react';
 import { Formik, Form, Field } from 'formik';
 import * as yup from 'yup';
+import { transitApi } from '../../utils/AxiosInstance';
 
 const FormSchema = yup.object().shape({
     pass: yup
@@ -21,14 +22,25 @@ function setNewPassword({ onClick, activeTab}) {
     return (
         <Formik
         initialValues={{
-          name: '',
+          pass: '',
+          confirm: '',
         }}
         validationSchema={FormSchema}
         onSubmit={(values) => {
           console.log(values);
+          const payload = {
+            oldPassword:"123456789",
+            newPassword: values.pass
+        }
+          transitApi.post('/v1/users/change-password', payload).then((res)=>{
+            console.log("res", res);
+            onClick(activeTab+1);
+          }).catch((error)=> {
+            console.error('error', error);
+          })
         }}
       >
-        {({ errors }) => (
+        {({ errors, isValid, dirty }) => (
           <Form>
         <div className="auth_container_c set_new_password">
                 <div className="auth_form col-lg-7">
@@ -37,7 +49,7 @@ function setNewPassword({ onClick, activeTab}) {
                     <p>Must be atleast 8 characters.</p>
                     </div>
 
-                    <form action="">
+               
                     <div className="row">
                     <div class="col-md-12 mb-3">
                     {/* <input type="password" class="form-control" placeholder="Password"/> */}
@@ -51,10 +63,10 @@ function setNewPassword({ onClick, activeTab}) {
                     {errors.confirm &&<div className="error_message">{errors.confirm}</div>}
                     </div>
                     </div>
-                    </form>
+        
                     <div className="auth_form_cta">
                     <button type="button" class="btn" onClick={()=> onClick(activeTab-1)}><i class="fas fa-chevron-left"></i> Go Back</button>
-                    <button type="button" class="btn btn-danger" onClick={()=> onClick(activeTab+1)}>Reset Password</button>
+                    <button type="submit" disabled={!isValid || !dirty} class="btn btn-danger">Reset Password</button>
                     </div>
                     <div className="auth_stepper">
                         <button className="btn">1</button>
@@ -74,4 +86,4 @@ function setNewPassword({ onClick, activeTab}) {
     );
 }
 
-export default setNewPassword;
+export default setNewPassword

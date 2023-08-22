@@ -1,7 +1,7 @@
 import Axios from "axios";
 
 export const transitApi = Axios.create({
-    baseURL: "JAVA_API_BASE_URL",
+  baseURL: 'https://www.transitfastautos.com/api'
 });
 
 // Api Request Interceptor

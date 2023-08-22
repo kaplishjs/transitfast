@@ -5,8 +5,57 @@ import Layout from "../components/Layout";
 import Link from "next/link";
 import SearchOption from "../components/common/SearchOption";
 import ProductCard from "../components/common/ProductCard";
+import { useFormik } from 'formik';
+import React from "react";
+import { transitApi } from "../utils/AxiosInstance";
+import { carData } from "../utils/cardetials";
 
 export default function Signup() {
+
+  const [carList, setCarList] = React.useState([carData,carData,carData,carData,carData,carData,carData]);
+  React.useEffect(()=>{
+   transitApi.get('/v1/vehicle').
+    then((res) => {
+      console.log(res);
+      setCarList();
+    }).catch((error)=>{
+      console.log(error);
+    })
+  }, []);
+
+  const validate = values => {
+    const errors = {};
+    if (!values.name) {
+      errors.name = 'Required';
+    }
+  
+    if (!values.description) {
+      errors.description = 'Required';
+    }
+  
+    if (!values.email) {
+      errors.email = 'Required';
+    }
+
+    if (!values.subject) {
+      errors.subject = 'Required';
+    }
+  
+    return errors;
+  };
+ 
+  const formik = useFormik({
+    initialValues: {
+      email: '',
+      name: '',
+      subject: '',
+      description: '',
+    },
+    validate,
+    onSubmit: values => {
+      alert(JSON.stringify(values, null, 2));
+    },
+  });
   return (
     <Layout>
       
@@ -83,7 +132,15 @@ export default function Signup() {
           <div className="product_itm_wrapper  ">
             <div className="container mb-5">
             
-          { Array.from({length:8}).map((el)=> <ProductCard/>)}
+          {
+            carList.map((item, index) => {
+              return (
+                <>
+                <ProductCard item={item} />
+                </>
+              )
+            })
+          }
             </div>
             <button className="btn btn-danger mx-auto d-block"> View all Vehicles</button>
           </div>
@@ -114,25 +171,38 @@ export default function Signup() {
                   <h5 className="small_title">Contact Us</h5>
                         <h2 className="heding_l large_title">How Can our team help you?</h2>
                         <p>Contact us via email or phone and we’ll get back to you as soon as we can.</p>
-                      
+                       <form onSubmit={formik.handleSubmit}>
                         <div className="form">
                         <div className="mb-3">
-                        <input type="text" className="form-control" id="" placeholder="Name"/>
+                        <input type="text" className="form-control" id="name" name="name" onChange={formik.handleChange} value={formik.values.name} placeholder="Name"/>
+                        {formik.errors.name ? (
+                           <div className="error_message">{formik.errors.name}</div>
+                         ) : null}
                         </div>
                         <div className="mb-3">
-                        <input type="email" className="form-control" id="" placeholder="email"/>
+                        <input type="email" className="form-control" id="email" name="email" onChange={formik.handleChange} value={formik.values.email} placeholder="email"/>
+                        {formik.errors.email ? (
+                           <div className="error_message">{formik.errors.email}</div>
+                         ) : null}
                         </div>
                         <div className="mb-3">
-                        <input type="text" className="form-control" id="" placeholder="Subject"/>
+                        <input type="text" className="form-control" id="subject" name="subject" onChange={formik.handleChange} value={formik.values.subject} placeholder="Subject"/>
+                        {formik.errors.subject ? (
+                           <div className="error_message">{formik.errors.subject}</div>
+                         ) : null}
                         </div>
                         <div className="mb-3">
-                        <textarea className="form-control" name="" id="" placeholder="Message" cols="30" rows="10"></textarea>
+                        <textarea className="form-control" id="description" name="description" onChange={formik.handleChange} value={formik.values.description} placeholder="Message" cols="30" rows="10"></textarea>
+                        {formik.errors.description ? (
+                           <div className="error_message">{formik.errors.description}</div>
+                         ) : null}
                         </div>
                         
                         
                         
-                        <button className="btn btn-danger">Submit</button> 
+                        <button type="submit" className="btn btn-danger">Submit</button> 
                         </div>
+                        </form>
 
                 
                         

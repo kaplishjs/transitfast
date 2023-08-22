@@ -2,8 +2,22 @@ import React from 'react'
 import Layout from '../../components/Layout'
 import Link from 'next/link'
 import SearchOption from '../../components/common/SearchOption'
+import { carData } from '../../utils/cardetials';
+import { transitApi } from '../../utils/AxiosInstance';
 
 function index() {
+
+  const [carList, setCarList] = React.useState([carData,carData,carData,carData,carData,carData,carData]);
+  React.useEffect(()=>{
+   transitApi.get('/v1/vehicle').
+    then((res) => {
+      console.log(res);
+      setCarList();
+    }).catch((error)=>{
+      console.log(error);
+    })
+  }, []);
+
   return (
     <Layout>
         {/* filter section */}
@@ -13,7 +27,11 @@ function index() {
 
     <section className="product_itm_wrapper  ">
             <div className="container mb-5">
-            <div className="product_itm card">
+            {
+            carList.map((item, index) => {
+              return (
+                <>
+                <div className="product_itm card">
                 <div className="card-body">
                     <img className="img-fluid" src="assests/dummy_images/product_itm.png" alt="" srcset="" />
                     <div className="product_itm_summary">
@@ -22,52 +40,16 @@ function index() {
                     </div>
                     <div className="product_itm_footer">
                     <h5 className="product_itm_title mb-0">£498.00</h5>
-                    <button className="btn  btn-outline-danger">View Deals</button>
+                    <Link className="btn  btn-outline-danger" href={`/car-details/${item._id}`}>View Deals</Link>
                     </div>
                     
                 </div>
             </div>
-            <div className="product_itm card">
-                <div className="card-body">
-                    <img className="img-fluid" src="assests/dummy_images/product_itm.png" alt="" srcset="" />
-                    <div className="product_itm_summary">
-                    <span className="available_btn">Available</span>
-                    <span className="product_itm_desc">Citroen Berlingo M BlueHDi 100 S&S 1000 Enterprise Edition</span>
-                    </div>
-                    <div className="product_itm_footer">
-                    <h5 className="product_itm_title mb-0">£498.00</h5>
-                    <button className="btn  btn-outline-danger">View Deals</button>
-                    </div>
-                    
-                </div>
-            </div> <div className="product_itm card">
-                <div className="card-body">
-                    <img className="img-fluid" src="assests/dummy_images/product_itm.png" alt="" srcset="" />
-                    <div className="product_itm_summary">
-                    <span className="available_btn">Available</span>
-                    <span className="product_itm_desc">Citroen Berlingo M BlueHDi 100 S&S 1000 Enterprise Edition</span>
-                    </div>
-                    <div className="product_itm_footer">
-                    <h5 className="product_itm_title mb-0">£498.00</h5>
-                    <button className="btn  btn-outline-danger">View Deals</button>
-                    </div>
-                    
-                </div>
-            </div> <div className="product_itm card">
-                <div className="card-body">
-                    <img className="img-fluid" src="assests/dummy_images/product_itm.png" alt="" srcset="" />
-                    <div className="product_itm_summary">
-                    <span className="available_btn">Available</span>
-                    <span className="product_itm_desc">Citroen Berlingo M BlueHDi 100 S&S 1000 Enterprise Edition</span>
-                    </div>
-                    <div className="product_itm_footer">
-                    <h5 className="product_itm_title mb-0">£498.00</h5>
-                    <button className="btn  btn-outline-danger">View Deals</button>
-                    </div>
-                    
-                </div>
-            </div> 
-      
+                </>
+              )
+            })
+          }
+
         
             </div>
             {/* <button className="btn btn-danger mx-auto d-block"> View all Vehicles</button> */}

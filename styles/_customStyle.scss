@@ -154,3 +154,50 @@
         width: 75%;
     }
 }
+
+
+// lb
+.swiper_wrap {
+    // height: 100%;
+    width: 100%;
+    position: relative;
+    display: block;
+    text-align: left;
+  }
+  
+  .swiper-button-disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  
+  .car_detail_slider_wrapper{
+    width: 90%;
+    margin: auto;
+  }
+
+  .swiper-button svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .image-swiper-button-prev {
+    position: absolute;
+    top: 50%;
+    left: 0px !important;
+    transform: translateY(-50%);
+    margin-top: 0px;
+    color: #6c757d!important;
+    cursor: pointer;
+  }
+  .image-swiper-button-next {
+    margin-top: 0px;
+    position: absolute;
+    top: 50%;
+    right: 0px !important;
+    transform: translateY(-50%);
+    color: #6c757d!important;
+    cursor: pointer;
+  }
+  .swiper-button-disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }

@@ -13,7 +13,15 @@ function SignIn(props) {
     const handleChange = (e) => {
         console.log(e.target.name, e.target.value)
         setSignInInput({ ...signInInput, [e.target.name]: e.target.value })
-        
+    }
+
+    const handleLogin = () => {
+        transitApi.post('/v1/admin/login', signInInput).then((res)=>{
+            console.log("res", res);
+            router.push('/')
+          }).catch((error)=> {
+            console.error('error', error);
+          })
     }
 
     return (
@@ -38,7 +46,7 @@ function SignIn(props) {
                     </form>
                     <div className="auth_form_cta">
                     <Link href="/signup" type="button" class="btn"><i class="fas fa-chevron-left"></i> Go Sign-up</Link>
-                    <button onClick={()=>router.push('/')} type="button" class="btn btn-danger">Sign In</button>
+                    <button disabled={!signInInput?.email || !signInInput?.password} onClick={()=>handleLogin()} type="button" class="btn btn-danger">Sign In</button>
                     </div>
                 </div>
                 <div className="auth_img col-lg-5">

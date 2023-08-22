@@ -1,9 +1,22 @@
 import React from 'react'
 import Layout from '../../components/Layout'
 import ProductCard from "../../components/common/ProductCard"
+import { carData } from '../../utils/cardetials';
+import { transitApi } from '../../utils/AxiosInstance';
 
 function index() {
-  const data = [1,2,3,4,5, 6, 7, 8, 9]
+
+  const [carList, setCarList] = React.useState([carData,carData,carData,carData,carData,carData,carData]);
+  React.useEffect(()=>{
+   transitApi.get('/v1/vehicle').
+    then((res) => {
+      console.log(res);
+      setCarList();
+    }).catch((error)=>{
+      console.log(error);
+    })
+  }, []);
+
   return (
     <Layout>
   <section className="welcome_mail_wrapper text-center bg_felid_color d-flex">
@@ -31,15 +44,15 @@ Have the latest offers straight to your email.</p>
 
     <div className="product_itm_wrapper bg_white ">
       <div className="container mb-5">
-        {
-          data.map(item=>  {
-            return (
-              <>  
-              <ProductCard/>
-              </>
-            )
-          })
-        }
+          {
+            carList.map((item, index) => {
+              return (
+                <>
+                <ProductCard item={item} />
+                </>
+              )
+            })
+          }
       
       {/* <div className="product_itm card">
           <div className="card-body">

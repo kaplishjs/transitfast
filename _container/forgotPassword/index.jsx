@@ -1,13 +1,24 @@
 import React from 'react';
 import Link from 'next/link';
+import { transitApi } from '../../utils/AxiosInstance';
 
 function forgotPassword({ onClick, activeTab}) {
 
     const [state, seState] = React.useState({ email : ""});
 
     const handleChange = (e) => {
-        setSignInInput({ ...state, [e.target.name]: e.target.value })
+        seState({ ...state, [e.target.name]: e.target.value })
     };
+
+    const handleForgotPass = () => {
+        transitApi.post('/v1/users/forgot-password', state).then((res)=>{
+            localStorage.setItem('email', state?.email);
+            console.log("res", res);
+            onClick(activeTab+1);
+          }).catch((error)=> {
+            console.error('error', error);
+          })
+    }
 
     return (
         <div className="auth_container_c forgot_password">
@@ -26,7 +37,7 @@ function forgotPassword({ onClick, activeTab}) {
                     </form>
                     <div className="auth_form_cta">
                     <Link type="button" class="btn" href="/signIn"><i class="fas fa-chevron-left"></i> Go Back</Link>
-                    <button type="button" class="btn btn-danger" onClick={()=> onClick(activeTab+1)}>Reset Password</button>
+                    <button disabled={!state.email} type="button" class="btn btn-danger" onClick={()=> handleForgotPass()}>Reset Password</button>
                     </div>
                     <div className="auth_stepper">
                         <button className="btn active">1</button>

@@ -2,9 +2,10 @@ import React from "react";
 import { useFormik } from "formik";
 import { transitApi } from '../../utils/AxiosInstance';
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 function Signup(props) {
-
+   const router = useRouter();
     const validate = values => {
       const urlValidate =
       /^((https?|ftp):\/\/)?(www.)?(((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:)*@)?(((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5]))|((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?)(:\d*)?)(\/((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)?)?(\?((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|[\uE000-\uF8FF]|\/|\?)*)?(\#((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|\/|\?)*)?$/i;
@@ -45,14 +46,10 @@ function Signup(props) {
 
         if (!values.vatNumber) {
           errors.vatNumber = "Required";
-        } else if (!urlValidate.test(values.vatNumber)) {
-          errors.vatNumber = "Invalid URL address";
         }
 
         if (!values.companyRegistration) {
           errors.companyRegistration = "Required";
-        } else if (!urlValidate.test(values.companyRegistration)) {
-          errors.companyRegistration = "Invalid URL address";
         }
       
         if (!values.email) {
@@ -63,7 +60,6 @@ function Signup(props) {
       
         return errors;
       };
-
     const formik = useFormik({
         initialValues: {
           firstName: '',
@@ -73,12 +69,40 @@ function Signup(props) {
           dealershipName: '',
           phoneNumber:"",
           website:"",
-          vatNumber:""
+          vatNumber:"",
+          companyRegistration: "",
+          createPassword: "",
+          address1: "",
+          address2: "",
         },
         validate,
         onSubmit: values => {
           console.log("Click")
           alert(JSON.stringify(values, null, 2));
+          const {firstName, lastName, email, jobTitle, dealershipName, phoneNumber, 
+            website, vatNumber, companyRegistration, address1, address2, createPassword} = values;
+          const payload = {
+            firstName,
+            lastName,
+            fullName: firstName+lastName,
+            jobTitle,
+            dealershipName,
+            phoneNo: phoneNumber,
+            website,
+            vatNumber,
+            companyRegistration,
+            address_1: address1,
+            address_2: address2,
+            role: "ADMIN",
+            email,
+            password:createPassword
+          };
+          transitApi.post('/v1/admin/register', payload).then((res)=>{
+            console.log("res", res);
+            router.push('/signIn');
+          }).catch((error)=> {
+            console.error('error', error);
+          })
         },
       });
 
