@@ -6,9 +6,6 @@
     "start": "next start"
   },
   "dependencies": {
-    "@tanstack/react-query": "^4.32.0",
-    "@tanstack/react-query-devtools": "^4.32.0",
-    "@tanstack/react-query-next-experimental": "^5.0.0-alpha.80",
     "axios": "^1.4.0",
     "bootstrap": "^5.3.1",
     "classnames": "^2.3.2",
