@@ -43,8 +43,9 @@
     }
     .form-control{
         background-color: transparent;
-        border-color: $white_color;
         color: $white_color;
+        border-radius: 0.875rem;
+        border: 2px solid var(--fields-color, #F7F7F9);
     }
 }
 .footer_copy_right {

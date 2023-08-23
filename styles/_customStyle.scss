@@ -72,7 +72,14 @@
     .btn{
     font-weight:600 ;}
     .btn-outline-danger{
-        @include border2($primary_color)
+        @include border2($primary_color);
+        color: var(--primary, #E21C21);
+        text-align: center;
+        font-family: Barlow;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
     }
 
     img{
@@ -84,12 +91,20 @@
         row-gap: 1rem;
     }
     .product_itm_title{
-        color: $black_color;
+        color: #000;
+        font-family: Barlow;
+        font-size: 1.25rem;
+        font-style: normal;
         font-weight: 600;
+        line-height: normal;
     }
     .product_itm_desc{
+        color: #000;
+        font-family: Barlow;
+        font-size: 1rem;
+        font-style: normal;
         font-weight: 500;
-        color: $black_color;
+        line-height: normal;
     }
 }
 .about_us_feature_itm{
@@ -225,3 +240,16 @@
     h3{
         margin-bottom: 1.7rem;    }
 }
+.error_message{
+    color: red;
+}
+ .btn-link{
+    text-underline-position:under
+ }
+ .text-right{
+    text-align: right;
+ }
+ .text-right button{
+    padding: 14px 74px;
+
+ }

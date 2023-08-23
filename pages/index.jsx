@@ -110,7 +110,7 @@ export default function Signup() {
                 <div className="col-md-6 features_img">
                     <img className="img-fluid w-100" src="assests/images/feature_img.png" alt="" srcset="" />
                 </div>
-                <div className="col-md-6 feature_description section_padding">
+                <div className="col-md-6 feature_description section_padding m-auto">
                         <h5 className="small_title">About Us</h5>
                         <h2 className="heding_l large_title"><span className="fc_primary2">Transit</span><span className="fc_primary">Fast</span> Vehicle <br />Solutions</h2>
                         <p className="section_desc">Buying a vehicle should never be difficult, or time-consuming when you have a busy working life. Whether you’re a first-time buyer, replacing your existing vehicle, or adding to your ever-growing fleet; Transitfast is here to make the experience as simplistic and transparent as possible so you can concentrate on what’s important to you.</p>
@@ -142,7 +142,7 @@ export default function Signup() {
             })
           }
             </div>
-            <button className="btn btn-danger mx-auto d-block"> View all Vehicles</button>
+            <button className="btn btn-danger mx-auto d-block  px-6"> View all Vehicles</button>
           </div>
 
       </section>
@@ -199,8 +199,10 @@ export default function Signup() {
                         </div>
                         
                         
-                        
+                        <div className="text-right">
+
                         <button type="submit" className="btn btn-danger">Submit</button> 
+                        </div>
                         </div>
                         </form>
 
