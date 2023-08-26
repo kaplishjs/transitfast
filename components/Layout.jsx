@@ -20,9 +20,8 @@ function Layout({children}) {
         <nav className="navbar navbar-expand-lg ">
           <div className="container">
             <a className="navbar-brand" href="#">
-              
             <Image 
-              src="/assests/images/logo.png"
+              src="/assests/images/logo.svg"
               alt="img"
               width={70}
               height={70}
@@ -66,7 +65,7 @@ function Layout({children}) {
                 <li className="nav-item">
                 <Link  className={classNames('nav-link', {
                   'active' : router.asPath === '/contact-us'
-                })} href='/contact-us'>Contact-us</Link>
+                })} href='/contact-us'>Contact Us</Link>
                 </li>
                 
               </ul>

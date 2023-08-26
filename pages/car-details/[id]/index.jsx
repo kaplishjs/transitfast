@@ -166,7 +166,7 @@ function index() {
                          ) : null}
                         </div>
                         <div className="mb-3">
-                        <input type="email" className="form-control" id="email" name="email" onChange={formik.handleChange} value={formik.values.email} placeholder="email"/>
+                        <input type="email" className="form-control" id="email" name="email" onChange={formik.handleChange} value={formik.values.email} placeholder="Email"/>
                         {formik.errors.email ? (
                            <div className="error_message">{formik.errors.email}</div>
                          ) : null}

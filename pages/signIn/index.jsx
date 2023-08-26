@@ -27,6 +27,8 @@ function SignIn(props) {
     return (
         <div className="auth_container_c sign_in">
                 <div className="auth_form col-lg-7">
+                <div className='signInTopNav'><Link href="/signup" type="button" class="btn"><i class="fas fa-chevron-left"></i> Go Sign-up</Link></div>
+                
                     <div className="auth_form_heading_title mt-0">
                     <h2 className="heding_l">Sign in to <span className="fc_primary2">Transit</span><span className="fc_primary">Fast</span></h2>
                     <p>Discover best vehicles from top brands.</p>
@@ -45,7 +47,7 @@ function SignIn(props) {
 
                     </form>
                     <div className="auth_form_cta">
-                    <Link href="/signup" type="button" class="btn"><i class="fas fa-chevron-left"></i> Go Sign-up</Link>
+                   
                     <button disabled={!signInInput?.email || !signInInput?.password} onClick={()=>handleLogin()} type="button" class="btn btn-danger">Sign In</button>
                     </div>
                 </div>

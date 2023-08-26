@@ -58,7 +58,7 @@ function index() {
 
         {/* hero section */}
 
-        <section className="hero_wrapper section_margin mb-4">
+        <section className="hero_wrapper section_margin sectionMarAdjust mb-4">
           <div className="container">
             <div className="row">
               <div className="col-md-6 hero_description">
@@ -71,7 +71,7 @@ function index() {
                 </div>
               </div>
               <div className="col-md-6 hero_img">
-                <img  className="img-fluid w-100" src="assests/images/heroIMg.png" alt="" srcset="" />
+                <img  className="img-fluid w-100" src="assests/images/Brand_heroImg.jpg" alt="" srcset="" />
               </div>
             </div>
 

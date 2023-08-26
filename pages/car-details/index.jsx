@@ -66,7 +66,7 @@ function index() {
                         <input type="text" className="form-control" id="" placeholder="Name"/>
                         </div>
                         <div className="mb-3">
-                        <input type="email" className="form-control" id="" placeholder="email"/>
+                        <input type="email" className="form-control" id="" placeholder="Email"/>
                         </div>
                         <div className="mb-3">
                         <input type="text" className="form-control" id="" placeholder="Subject"/>

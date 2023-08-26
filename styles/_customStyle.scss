@@ -17,7 +17,7 @@
     display: flex;
     gap: 1.5rem;
     align-items: end;
-    color: #fff;
+    color: #fff; 
 }
 .hero_description {
     h1 {
@@ -253,3 +253,19 @@
     padding: 14px 74px;
 
  }
+
+ 
+ .sectionMarAdjust {margin: 3.66rem 0;}
+ .buttonActionMiddle {display: flex; justify-content: space-between; align-items: center; margin-top: 10px;}
+ .signUpFormSettings.auth_container_c .auth_form_heading_title {    margin-bottom: 1.4rem;}
+ .signUpFormSettings .form-control {    padding: 0.5rem 0.9rem;}
+ .signUpFormSettings .mb-3 {margin-bottom: 0.7rem!important;}
+ .signUpFormSettings  .auth_form_heading_title {margin-top: 0;}
+ .signUpFormSettings.auth_container_c .auth_form {    padding: 3.1875rem 5.1875rem 1.1875rem 5.25rem;}
+ .signUpFormSettings .form-control ,  .form-control{background-color:#fff; border-color: #dbdbdb;}
+ .signUpFormSettings .form-control:focus , .form-control:focus {color: var(--bs-body-color); background-color: #fff; border-color: #636364;outline: 0; box-shadow: none;
+}
+.btn { padding: 0.6rem 1rem;}
+.submitAlignRight {justify-content:end ; display: flex;}
+.signInTopNav .btn {padding-left: 0; text-align: left; border: 0 !important;}
+.signInTopNav  {display: block; margin-bottom: 15px;}

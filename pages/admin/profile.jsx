@@ -29,7 +29,7 @@ function profile() {
 <header class="dashboard_header navbar sticky-top   p-0 border-bottom" data-bs-theme="dark">
     <div className="container-fluid flex-md-nowrap">
     <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="#">
-  <img src="/assests/images/logo.png" alt="" srcset="" />
+  <img src="/assests/images/logo.svg" alt="" srcset="" />
 </a>
 
 <ul class="navbar-nav flex-row ">

@@ -61,7 +61,7 @@ export default function Signup() {
       
       {/* hero section */}
 
-      <section className="hero_wrapper section_margin">
+      <section className="hero_wrapper section_margin sectionMarAdjust">
           <div className="container">
             <div className="row">
               <div className="col-md-6 hero_description">
@@ -74,7 +74,7 @@ export default function Signup() {
                 </div>
               </div>
               <div className="col-md-6 hero_img">
-                <img  className="img-fluid w-100" src="assests/images/heroIMg.png" alt="" srcset="" />
+                <img  className="img-fluid w-100" src="assests/images/Brand_heroImg.jpg" alt="" srcset="" />
               </div>
             </div>
 
@@ -126,14 +126,12 @@ export default function Signup() {
           <div className="container text-center">
           <h5 className="small_title">Our vehicles</h5>
             <h2 className="heding_l large_title">We have different categories <br /> of vehicles</h2>
-
           </div>
-
           <div className="product_itm_wrapper  ">
             <div className="container mb-5">
             
           {
-            carList.map((item, index) => {
+            carList.slice(0,6).map((item, index) => {
               return (
                 <>
                 <ProductCard item={item} />
@@ -180,7 +178,7 @@ export default function Signup() {
                          ) : null}
                         </div>
                         <div className="mb-3">
-                        <input type="email" className="form-control" id="email" name="email" onChange={formik.handleChange} value={formik.values.email} placeholder="email"/>
+                        <input type="email" className="form-control" id="email" name="email" onChange={formik.handleChange} value={formik.values.email} placeholder="Email"/>
                         {formik.errors.email ? (
                            <div className="error_message">{formik.errors.email}</div>
                          ) : null}

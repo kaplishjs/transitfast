@@ -107,7 +107,7 @@ function Signup(props) {
       });
 
   return (
-    <div className="auth_container_c sign_up">
+    <div className="auth_container_c sign_up signUpFormSettings">
        
       <div className="auth_form col-lg-7">
         <div className="auth_form_heading_title">
@@ -274,12 +274,13 @@ function Signup(props) {
               {/* <input type="text" className="form-control" placeholder="Address 2" /> */}
             </div>
           </div>
-          <button  className="btn btn-danger" type="submit">Submit</button>
+          <div className="buttonActionMiddle">
+          <button  className="btn btn-danger" type="submit">Submit</button> <span>Already have an account? <Link href="/signIn" >Login</Link></span>
+          </div>
         </form>
-        <span>Already have an account? <Link href="/signIn" >Login</Link></span>
+       
       </div>
       <div className="auth_img col-lg-5"></div>
-      
     </div>
   );
 }
