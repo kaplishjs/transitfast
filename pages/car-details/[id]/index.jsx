@@ -141,8 +141,8 @@ function index() {
                         Electric Front Windows with One Touch Operation
                         </li>
                       </ul>
-                      <div className="d-flex align-items-end justify-content-end">
-                      <h5 className="mb-0 headieding_s fc_primary2 ">Price:</h5> <h4 className="headieding_l mb-0">£6,500</h4>
+                      <div className="d-flex align-items-end justify-content-end pricePound">
+                      <h5 className="mb-0 headieding_s fc_primary2 ">Price:  </h5> <h4 className="headieding_l mb-0"> &pound;6,500</h4>
                       </div>
                       </div> 
 

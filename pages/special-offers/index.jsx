@@ -48,7 +48,7 @@ Have the latest offers straight to your email.</p>
             carList.map((item, index) => {
               return (
                 <>
-                <ProductCard item={item} />
+                <ProductCard item={item}  />
                 </>
               )
             })

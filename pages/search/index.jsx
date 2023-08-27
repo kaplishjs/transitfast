@@ -28,7 +28,8 @@ function index() {
     <section className="product_itm_wrapper  ">
             <div className="container mb-5">
             {
-            carList.map((item, index) => {
+              
+              carList.slice(0,6).map((item, index) => {
               return (
                 <>
                 <div className="product_itm card">
