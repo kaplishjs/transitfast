@@ -27,7 +27,7 @@ function SignIn(props) {
     return (
         <div className="auth_container_c sign_in">
                 <div className="auth_form col-lg-7">
-                <div className='signInTopNav'><Link href="/signup" type="button" class="btn"><i class="fas fa-chevron-left"></i> Go Sign-up</Link></div>
+                <div className='signInTopNav'><Link href="/signup" type="button" class="btn"><i class="fas fa-chevron-left"></i> <span className='TextHide'>Go Sign-up</span> </Link></div>
                 
                     <div className="auth_form_heading_title mt-0">
                     <h2 className="heding_l">Sign in to <span className="fc_primary2">Transit</span><span className="fc_primary">Fast</span></h2>

@@ -269,3 +269,21 @@
 .submitAlignRight {justify-content:end ; display: flex;}
 .signInTopNav .btn {padding-left: 0; text-align: left; border: 0 !important;}
 .signInTopNav  {display: block; margin-bottom: 15px;}
+.btn {    min-width: 0; padding: 0.5rem 1rem;}
+.signInTopNav .TextHide{display: none;}
+.pricePound h5{ margin-right: 5px;}
+
+// .footer_newsletter .form-control {}
+
+.footer_newsletter ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #fff;
+    opacity: 1; /* Firefox */
+  }
+  
+  .footer_newsletter :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #fff;
+  }
+  
+  .footer_newsletter ::-ms-input-placeholder { /* Microsoft Edge */
+    color: #fff;
+  }
