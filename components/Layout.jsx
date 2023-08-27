@@ -98,7 +98,7 @@ function Layout({children}) {
                 <form action="">
                 <div className="d-flex gap-4">
                 <input type="email" className="form-control" id="" placeholder="Email Address"/>
-                <button className="btn btn-danger">Subscribe</button>
+                <button className="btn btn-danger subscribeBtn">Subscribe</button>
               </div>
                 </form>
               </div>
