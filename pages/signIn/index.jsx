@@ -16,9 +16,9 @@ function SignIn(props) {
     }
 
     const handleLogin = () => {
+        router.push('/admin/my-account')
         transitApi.post('/v1/admin/login', signInInput).then((res)=>{
             console.log("res", res);
-            router.push('/')
           }).catch((error)=> {
             console.error('error', error);
           })

@@ -1,5 +1,7 @@
 import React from 'react'
 import withAuth from '../../components/auth/withAuth'
+import HeaderAdmin from '../../components/admin/HeaderAdmin'
+import Sidebar from '../../components/admin/Sidebar'
 
 function profile() {
   return (
@@ -26,45 +28,12 @@ function profile() {
 
 </svg>
 
-<header class="dashboard_header navbar sticky-top   p-0 border-bottom" data-bs-theme="dark">
-    <div className="container-fluid flex-md-nowrap">
-    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="#">
-  <img src="/assests/images/logo.svg" alt="" srcset="" />
-</a>
-
-<ul class="navbar-nav flex-row ">
-  <li className='nav-item'><img  src="https://i.pravatar.cc/60" class="rounded-circle" alt="..."/></li>
-  <li className="nav-item d-block d-md-none text-nowrap">
-    <button class="nav-link px-3 text-black" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-    <i class="fas fa-bars"></i>
-    </button>
-  </li>
-</ul>
-    </div>
-</header>
 
 <div class="container-fluid">
 <div class="row admin_container_main">
-  <div class="sidebar border border-right  col-md-3 col-lg-2 offcanvas-md offcanvas-end " tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="sidebarMenuLabel">Company name</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
-        {/* <ul class="nav flex-column">
 
-        </ul> */}
-        <ul class="nav flex-column mb-auto sidebar_itm_wrapper">
-          <li className="bg-body-tertiary"><i class="fas fa-car"></i> <span>My Vehicles</span></li>
-          <li className="bg-body-tertiary"><i class="fas fa-car"></i> <span>Request</span></li>
-          <li className="bg-body-tertiary"><i class="fas fa-car"></i> <span>My Account</span></li>
-          <li className="bg-body-tertiary"><i class="fas fa-car"></i> <span>Logout</span></li>
-
-        </ul>
-      </div>
-    </div>
   <main class="col-md-9 ms-sm-auto col-lg-10 p-3   p-md-4">
-    <div className="card ">
+    {/* <div className="card ">
       <div className="card-body">
         <img src="/assests/dummy_images/upload_img.png" alt="" srcset="" />
 
@@ -107,7 +76,7 @@ function profile() {
         <button className='btn btn-danger mt-4'>Save Changes</button>
         
       </div>
-    </div>
+    </div> */}
   
     {/* my account */}
     {/* <!-- Modal --> */}
@@ -136,53 +105,7 @@ function profile() {
 </div>
 {/* --------------- */}
 {/* my vehicle */}
-  <div className="card dashboard_card ">
-    <div className="card-body">
-        <div className="search_header_card">
-        <div class="input-group">
-            <div class="input-group-text">
-               <i class="fas fa-search"></i>
-            </div>
-          <input type="search" class="form-control ps-0" placeholder="Search any vehicle..." aria-label="Search any vehicle..."/>
-        </div>
-        <button className="btn btn-danger">Create Deal</button>
-        </div>
-    </div>
-  </div>
-
-  <div className="card dashboard_card ">
-    <div className="card-body">
-        <div className="container">
-          <div className="row">
-                <div className="col-md-6">
-                      <img className="img-fluid w-100"  src="/assests/dummy_images/previewer.png" alt="" srcset="" />
-                </div>
-                <div className="col-md-6 my_vehicle_desc section_padding">
-                <div className="my_vehicle_desc_header">
-                  <h2 className="heding_l mb-0">£6,500</h2>
-                  <div className="my_vehicle_desc_header_cta">
-                    <button className='rounded-pill btn btn-outline-success'>Edit</button>
-                    <button className='rounded-pill btn btn-outline-danger'>Delete</button>
-                  </div>
-                </div>   
-                <h4>Citroen Berlingo Van M BlueHDi 100 6-speed manual 650 Enterprise Edition</h4> 
-                <ul className='ps-3'>
-                  <li>
-                  180 Degree Opening Unglazed Asymmetric Rear Doors <strong className="fc_primary">See Details...</strong>
-                  </li>
-                </ul>
-                <div className="d-flex gap-2 flex-wrap mb-4">
-                      <button type="button" class="btn btn-outline-secondary rounded-pill desc_pill">make</button>
-                      <button type="button" class="btn btn-outline-secondary rounded-pill desc_pill">year</button>
-                      <button type="button" class="btn btn-outline-secondary rounded-pill desc_pill">mileage</button>
-                      <button type="button" class="btn btn-outline-secondary rounded-pill desc_pill">Engine size</button>
-                      <button type="button" class="btn btn-outline-secondary rounded-pill desc_pill">Color</button>
-                      </div>
-                </div>
-          </div>
-        </div>
-    </div>
-  </div>
+ 
 {/*  */}
 
 <div className="card dashboard_card">
