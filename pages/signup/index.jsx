@@ -97,7 +97,7 @@ function Signup(props) {
             email,
             password:createPassword
           };
-          transitApi.post('/api/v1/admin/register', payload).then((res)=>{
+          transitApi.post('/v1/admin/register', payload).then((res)=>{
             console.log("res", res);
             router.push('/signIn');
           }).catch((error)=> {
