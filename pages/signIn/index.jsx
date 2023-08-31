@@ -9,17 +9,26 @@ function SignIn(props) {
         email : "",
         password: ""
     });
+    const [errMsg, setErrMsg] = useState('')
     const router = useRouter()
     const handleChange = (e) => {
+        if(errMsg.length){
+            setErrMsg("")
+        }
         console.log(e.target.name, e.target.value)
         setSignInInput({ ...signInInput, [e.target.name]: e.target.value })
     }
 
     const handleLogin = () => {
-        router.push('/admin/my-account')
+        // router.push('/admin/my-account')
         transitApi.post('/v1/admin/login', signInInput).then((res)=>{
             console.log("res", res);
+            localStorage.setItem('accessToken', res.data.data.accessToken);
+            localStorage.setItem('refreshToken', res.data.data.refreshToken);
+            localStorage.setItem('isLoggedIn', true);
+            router.push('/admin/my-account')
           }).catch((error)=> {
+            setErrMsg(error.response.data.message)
             console.error('error', error);
           })
     }
@@ -50,6 +59,7 @@ function SignIn(props) {
                    
                     <button disabled={!signInInput?.email || !signInInput?.password} onClick={()=>handleLogin()} type="button" class="btn btn-danger">Sign In</button>
                     </div>
+                    <span style={{'color':"red"}}>{errMsg}</span>
                 </div>
                 <div className="auth_img col-lg-5">
 

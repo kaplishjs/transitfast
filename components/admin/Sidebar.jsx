@@ -2,6 +2,10 @@ import Link from 'next/link'
 import React from 'react'
 
 export default function Sidebar() {
+
+  const handleLogout = () =>{
+    localStorage.clear("")
+  }
   return (
     <>  <div class="sidebar border border-right  col-md-3 col-lg-2 offcanvas-md offcanvas-end " tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
     <div class="offcanvas-header">
@@ -17,7 +21,7 @@ export default function Sidebar() {
         <li className="bg-body-tertiary"><i class="fas fa-car"></i> <Link href="my-vehicle">My Vehicles</Link></li>
         <li className="bg-body-tertiary"><i class="fas fa-car"></i> <Link href="request">Request</Link></li>
         <li className="bg-body-tertiary"><i class="fas fa-car"></i> <Link href="my-account">My Account</Link></li>
-        <li className="bg-body-tertiary"><i class="fas fa-car"></i> <Link href="">Logout</Link></li>
+        <li className="bg-body-tertiary"><i class="fas fa-car"></i> <Link onClick={handleLogout} href="/">Logout</Link></li>
 
       </ul>
     </div>

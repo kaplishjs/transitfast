@@ -7,6 +7,8 @@ import classNames from "classnames";
 function Layout({children}) {
   const router = useRouter();
   console.log(router.asPath)
+  const isLoggedIn = localStorage.getItem("isLoggedIn")
+  console.log(isLoggedIn)
   return <div>
      <header className="main_header">
         <div className="header_strip">
@@ -71,7 +73,7 @@ function Layout({children}) {
               </ul>
               <form className="d-flex ms-auto" role="search">
                 {/* <button className="btn btn-danger" type="submit"> */}
-                <Link className="btn btn-danger" href='/signup'>Sign Up</Link>
+                <Link className="btn btn-danger" href={isLoggedIn?'/admin/my-account':'/signup'}>{isLoggedIn?"My Account":"Sign Up"}</Link>
                 {/* </button> */}
               </form>
             </div>
