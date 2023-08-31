@@ -1,3 +1,4 @@
+'use client';
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
@@ -7,7 +8,7 @@ import classNames from "classnames";
 function Layout({children}) {
   const router = useRouter();
   console.log(router.asPath)
-  const isLoggedIn = localStorage.getItem("isLoggedIn")
+  const isLoggedIn = typeof window !== 'undefined' && localStorage.getItem("isLoggedIn")
   console.log(isLoggedIn)
   return <div>
      <header className="main_header">

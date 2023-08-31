@@ -23,9 +23,9 @@ function SignIn(props) {
         // router.push('/admin/my-account')
         transitApi.post('/v1/admin/login', signInInput).then((res)=>{
             console.log("res", res);
-            localStorage.setItem('accessToken', res.data.data.accessToken);
-            localStorage.setItem('refreshToken', res.data.data.refreshToken);
-            localStorage.setItem('isLoggedIn', true);
+            typeof window !== 'undefined' && localStorage.setItem('accessToken', res.data.data.accessToken);
+            typeof window !== 'undefined' && localStorage.setItem('refreshToken', res.data.data.refreshToken);
+            typeof window !== 'undefined' &&  localStorage.setItem('isLoggedIn', true);
             router.push('/admin/my-account')
           }).catch((error)=> {
             setErrMsg(error.response.data.message)

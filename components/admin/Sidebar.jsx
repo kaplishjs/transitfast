@@ -1,10 +1,12 @@
+
+'use client';
 import Link from 'next/link'
 import React from 'react'
 
 export default function Sidebar() {
 
   const handleLogout = () =>{
-    localStorage.clear("")
+    typeof window !== 'undefined' && localStorage.clear("")
   }
   return (
     <>  <div class="sidebar border border-right  col-md-3 col-lg-2 offcanvas-md offcanvas-end " tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
