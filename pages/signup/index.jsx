@@ -97,7 +97,7 @@ function Signup(props) {
             email,
             password:createPassword
           };
-          transitApi.post('/v1/admin/register', payload).then((res)=>{
+          transitApi.post('/api/v1/admin/register', payload).then((res)=>{
             console.log("res", res);
             router.push('/signIn');
           }).catch((error)=> {
@@ -240,7 +240,7 @@ function Signup(props) {
               id="createPassword"
               className="form-control"  
               name="createPassword"
-                type="text"
+                type="password"
                 placeholder="Create password"
                 onChange={formik.handleChange}
                 value={formik.values.createPassword}
