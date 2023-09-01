@@ -63,7 +63,7 @@ function resetPassword({ onClick, activeTab}) {
     
     return (
         <div className="auth_container_c reset_password">
-                <div className="auth_form col-lg-7">
+                <div className="auth_form col-lg-5">
                     <div className="auth_form_heading_title">
                     <h2 className="heding_l">Password Reset</h2>
                     <p>We sent a 5 digits code to <span className="fc_primary">Dummyemail@gmail.com</span></p>
@@ -106,7 +106,7 @@ function resetPassword({ onClick, activeTab}) {
 
                     </div>
                 </div>
-                <div className="auth_img col-lg-5">
+                <div className="auth_img col-lg-7">
 
                 </div>
         </div>

@@ -35,7 +35,7 @@ function SignIn(props) {
 
     return (
         <div className="auth_container_c sign_in">
-                <div className="auth_form col-lg-7">
+                <div className="auth_form col-lg-5">
                 <div className='signInTopNav'><Link href="/signup" type="button" class="btn"><i class="fas fa-chevron-left"></i> <span className='TextHide'>Go Sign-up</span> </Link></div>
                 
                     <div className="auth_form_heading_title mt-0">
@@ -61,7 +61,7 @@ function SignIn(props) {
                     </div>
                     <span style={{'color':"red"}}>{errMsg}</span>
                 </div>
-                <div className="auth_img col-lg-5">
+                <div className="auth_img col-lg-7">
 
                 </div>
         </div>

@@ -62,16 +62,16 @@ function index() {
         <section className="hero_wrapper section_margin sectionMarAdjust mb-4">
           <div className="container">
             <div className="row">
-              <div className="col-md-6 hero_description">
+              <div className="col-md-5 hero_description">
                 <h1 className="heding_xl">The Driving <span className="fc_primary">Force Behind</span> You</h1>
                 <p>Our objective is to get you the wide variety of Affordable vehicle with the specifications you desire like Low rate finance options, Poor credit history and Short-term lease.</p>
 
-                <div className="d-flex gap-1">
+                <div className="d-flex gap-1 ViewSplOfferBtns">
                   <button className="btn btn-danger">View Special Offers</button>
                   <button type="button" className="btn btn-link">See all Vehicles</button>
                 </div>
               </div>
-              <div className="col-md-6 hero_img">
+              <div className="col-md-7 hero_img">
                 <img  className="img-fluid w-100" src="assests/images/Brand_heroImg.jpg" alt="" srcset="" />
               </div>
             </div>

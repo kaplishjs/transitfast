@@ -64,7 +64,7 @@ export default function Signup() {
       <section className="hero_wrapper section_margin sectionMarAdjust">
           <div className="container">
             <div className="row">
-              <div className="col-md-6 hero_description">
+              <div className="col-md-5 hero_description">
                 <h1 className="heding_xl">The  <span className="fc_primary">Driving Force </span> <br /> Behind You</h1>
                 <p className="section_desc">Our objective is to get you the wide variety of Affordable vehicle with the specifications you desire like Low rate finance options, Poor credit history and Short-term lease.</p>
 
@@ -73,7 +73,7 @@ export default function Signup() {
                   <Link href="/search" type="button" className="btn btn-link fc_primary">See all Vehicles</Link>
                 </div>
               </div>
-              <div className="col-md-6 hero_img">
+              <div className="col-md-7 hero_img">
                 <img  className="img-fluid w-100" src="assests/images/Brand_heroImg.jpg" alt="" srcset="" />
               </div>
             </div>

@@ -22,7 +22,7 @@ function forgotPassword({ onClick, activeTab}) {
 
     return (
         <div className="auth_container_c forgot_password">
-                <div className="auth_form col-lg-7">
+                <div className="auth_form col-lg-5">
                     <div className="auth_form_heading_title">
                     <h2 className="heding_l">Forgot Password?</h2>
                     <p>No worries, We’ll send you password reset instructions.</p>
@@ -47,7 +47,7 @@ function forgotPassword({ onClick, activeTab}) {
 
                     </div>
                 </div>
-                <div className="auth_img col-lg-5">
+                <div className="auth_img col-lg-7">
 
                 </div>
         </div>

@@ -43,7 +43,7 @@ function setNewPassword({ onClick, activeTab}) {
         {({ errors, isValid, dirty }) => (
           <Form>
         <div className="auth_container_c set_new_password">
-                <div className="auth_form col-lg-7">
+                <div className="auth_form col-lg-5">
                     <div className="auth_form_heading_title">
                     <h2>Set new Password</h2>
                     <p>Must be atleast 8 characters.</p>
@@ -76,7 +76,7 @@ function setNewPassword({ onClick, activeTab}) {
 
                     </div>
                 </div>
-                <div className="auth_img col-lg-5">
+                <div className="auth_img col-lg-7">
 
                 </div>
         </div>
