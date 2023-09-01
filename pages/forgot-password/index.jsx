@@ -5,7 +5,7 @@ import ResetPassword from '../../_container/resetPassword';
 import SetNewPassword from '../../_container/setNewPassword';
 
 const ForgotPasswordPage = () => {
-    const [activeTab, setActiveTab] = useState(2);
+    const [activeTab, setActiveTab] = useState(0);
 
     const handleClick = (value) => {
         if (value > -1 && value < 4) setActiveTab(value);
