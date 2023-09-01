@@ -7,8 +7,12 @@ function MyAccount() {
   const [profileData, setProfileData] = useState({});
 
   function getProfileData() {
+    let formData = new FormData();
+    for (const key in profileData) {
+      formData.append(key, profileData[key]);
+    }
     transitApi
-      .patch("/v1/admin", profileData)
+      .patch("/v1/admin", formData)
       .then((res) => {
         console.log("res");
         // console.log(res)
@@ -62,109 +66,7 @@ function MyAccount() {
                 value={profileData[el.name]}
               />
             </div>)}
-            {/* <div class="mb-3 col-md-4">
-              <input
-                type="text"
-                class="form-control"
-                name="lastName"
-                placeholder="Last Name"
-                onChange={handleOnchange}
-                value={profileData.lastName}
-              />
-            </div>
-            <div class="mb-3 col-md-4">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Job title"
-                name="jobTitle"
-                onChange={handleOnchange}
-                value={profileData.jobTitle}
-              />
-            </div>
-            <div class="mb-3 col-md-4">
-              <input
-                type="number"
-                class="form-control"
-                placeholder="Phone Number"
-                onChange={handleOnchange}
-                name="phoneNo"
-                value={profileData.phoneNo}
-              />
-            </div>
-            <div class="mb-3 col-md-4">
-              <input
-                type="email"
-                class="form-control"
-                placeholder="Email address"
-                disabled
-                // onChange={handleOnchange}
-                name="email"
-                value={profileData.email}
-              />
-            </div>
-            <div class="mb-3 col-md-4">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="website"
-                onChange={handleOnchange}
-                name="website"
-                value={profileData.website}
-              />
-            </div>
-            <div class="mb-3 col-md-4">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Company Registration"
-                onChange={handleOnchange}
-                name="companyRegistration"
-                value={profileData.companyRegistration}
-              />
-            </div>
-            <div class="mb-3 col-md-6">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Address 1"
-                onChange={handleOnchange}
-                name="address_1"
-                value={profileData.address_1}
-              />
-            </div>
-            <div class="mb-3 col-md-6">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Address 2"
-                onChange={handleOnchange}
-                name="address_2"
-                value={profileData.address_2}
-              />
-            </div>
-            <div class="mb-3 col-md-6">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="City / Town"
-                onChange={handleOnchange}
-                name="city_town"
-                value={profileData.city_town}
-              />
-            </div> */}
-            {/* <div class="mb-3 col-md-6">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Postcode"
-                onChange={handleOnchange}
-                name="post_code"
-                value={profileData.post_code}
-              />
-            </div> */}
           </div>
-
           <button className="btn btn-danger mt-4" onClick={handleSave}>Save Changes</button>
         </div>
       </div>
