@@ -17,7 +17,7 @@ export default function Signup() {
    transitApi.get('/v1/vehicle').
     then((res) => {
       console.log(res);
-      setCarList();
+      // setCarList();
     }).catch((error)=>{
       console.log(error);
     })
@@ -56,6 +56,8 @@ export default function Signup() {
       alert(JSON.stringify(values, null, 2));
     },
   });
+
+  console.log("carList ==>", carList)
   return (
     <Layout>
       
@@ -66,7 +68,9 @@ export default function Signup() {
             <div className="row">
               <div className="col-md-5 hero_description">
                 <h1 className="heding_xl">The  <span className="fc_primary">Driving Force </span> <br /> Behind You</h1>
-                <p className="section_desc">Our objective is to get you the wide variety of Affordable vehicle with the specifications you desire like Low rate finance options, Poor credit history and Short-term lease.</p>
+                <p className="section_desc">
+                Our objective is to find you a wide variety of affordable vehicles with the specifications you desire like low-rate finance options, poor credit history and Short-term lease with selected dealers.
+                  </p>
 
                 <div className="d-flex gap-1">
                   <Link href="/special-offers" className="btn btn-danger">View Special Offers</Link>
