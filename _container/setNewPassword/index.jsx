@@ -29,11 +29,11 @@ function setNewPassword({ onClick, activeTab}) {
         onSubmit={(values) => {
           console.log(values);
           const payload = {
-            oldPassword:"123456789",
-            newPassword: values.pass
+            email:"kaplishjs@gmail.com",
+            password: values.pass
         }
-          transitApi.post('/v1/users/change-password', payload).then((res)=>{
-            console.log("res", res);
+          transitApi.post('/v1/admin/reset-password', payload).then((res)=>{
+            console.log("Final step=>", res);
             onClick(activeTab+1);
           }).catch((error)=> {
             console.error('error', error);

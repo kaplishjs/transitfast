@@ -11,9 +11,9 @@ function forgotPassword({ onClick, activeTab}) {
     };
 
     const handleForgotPass = () => {
-        transitApi.post('/v1/users/forgot-password', state).then((res)=>{
+        transitApi.post('/v1/admin/forgot-password', state).then((res)=>{
             localStorage.setItem('email', state?.email);
-            console.log("res", res);
+            console.log("FIRST STEP", res);
             onClick(activeTab+1);
           }).catch((error)=> {
             console.error('error', error);

@@ -131,7 +131,7 @@ function Signup(props) {
             business
           </p>
         </div>
-
+        <div className='signInTopNav'><Link href="/" type="button" class="btn"><i class="fas fa-chevron-left"></i> <span className='TextHide'>Go Sign-up</span> </Link></div>
         <form onSubmit={formik.handleSubmit}>
           <div className="row">
             <div className="col-md-6 mb-3">

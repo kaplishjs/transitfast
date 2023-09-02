@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import { transitApi } from '../../utils/AxiosInstance';
 
 function resetPassword({ onClick, activeTab}) {
-    const [otp, setOtp] = useState(['', '', '', '', '']);
+    const [otp, setOtp] = useState(['', '', '', '', '',""]);
     const otpInputs = useRef([]);
 
     const handleOtpChange = (index, value) => {
@@ -53,8 +53,8 @@ function resetPassword({ onClick, activeTab}) {
           otp: otp.join(''),
           email: localStorage.getItem('email') || "avi.bhardwaj14321@gmail.com",
       }
-        transitApi.post('/v1/users/verify-otp', payload).then((res)=>{
-          console.log("res", res);
+        transitApi.post('/v1/admin/verify-otp', payload).then((res)=>{
+          console.log("VERIFY OTP", res);
           onClick(activeTab+1);
         }).catch((error)=> {
           console.error('error', error);
