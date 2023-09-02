@@ -27,14 +27,16 @@ function setNewPassword({ onClick, activeTab}) {
         }}
         validationSchema={FormSchema}
         onSubmit={(values) => {
+          const email = typeof window !== 'undefined' && localStorage.getItem('email')
           console.log(values);
           const payload = {
-            email:"kaplishjs@gmail.com",
+            email:email,
             password: values.pass
         }
           transitApi.post('/v1/admin/reset-password', payload).then((res)=>{
             console.log("Final step=>", res);
             onClick(activeTab+1);
+            window !== 'undefined' && localStorage.clear("")
           }).catch((error)=> {
             console.error('error', error);
           })
