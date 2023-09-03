@@ -11,6 +11,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/global.scss";
 import Head from "next/head";
 import { useEffect } from "react";
+import ContextProvider from "../context/ContextAuth";
 
 export default function MyApp({ Component, pageProps }) {
   useEffect(()=>{
@@ -28,7 +29,9 @@ export default function MyApp({ Component, pageProps }) {
             referrerpolicy="no-referrer"
           />
         </Head>
-        <Component {...pageProps} />
+        <ContextProvider>
+            <Component {...pageProps} />
+        </ContextProvider>
       </Layout>
     </>
   );

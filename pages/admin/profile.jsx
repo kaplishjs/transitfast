@@ -1,5 +1,5 @@
 import React from 'react'
-import withAuth from '../../components/auth/withAuth'
+// import withAuth from '../../components/auth/withAuth'
 import HeaderAdmin from '../../components/admin/HeaderAdmin'
 import Sidebar from '../../components/admin/Sidebar'
 
@@ -117,4 +117,4 @@ function profile() {
   )
 }
 
-export default withAuth(profile)
+export default profile

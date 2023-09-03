@@ -1,6 +1,7 @@
 import React from "react";
 import HeaderAdmin from "./admin/HeaderAdmin";
 import Sidebar from "./admin/Sidebar";
+import withAuth from "./auth/withAuth";
 function AdminLayout({ children }) {
   return (
     <>
@@ -18,4 +19,4 @@ function AdminLayout({ children }) {
   );
 }
 
-export default AdminLayout;
+export default withAuth(AdminLayout);
