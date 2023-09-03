@@ -1,147 +1,190 @@
 .bd-mode-toggle {
-    z-index: 1500;
-  }
-  .bi {
-display: inline-block;
-width: 1rem;
-height: 1rem;
+	z-index: 1500;
+}
+.bi {
+	display: inline-block;
+	width: 1rem;
+	height: 1rem;
 }
 @media (min-width: 768px) {
-    .sidebar .offcanvas-lg {
-      position: -webkit-sticky;
-      position: sticky;
-      top: 48px;
-    }
-    .navbar-search {
-      display: block;
-    }
-  }
-
-
-  // 
-  .admin_container_main{
-    min-height: calc(100vh -  100px);
-    background-color: #F8F8FA;
-  }
-  .sidebar {
-    background-color: $white_color!important;
-    padding: 1.5rem;
-  }
-  .common_modal{
-    .common_modal_icon{
-      max-height: 74px;
-    }
-    .modal-dialog{
-        max-width: 384px
-    }
-    .modal-content{
-      @include card_radius;
-    }
-    .modal-body{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: .5rem;
-      padding: 2rem 1.7rem;
-    }
-    .common_modal_footer{
-      margin-top: 3rem;
-      width: 100%;
-      .btn{
-        width: 100%;
-      }
-    }
-  }
-  .search_header_card {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    .input-group{
-      max-width: 385px;
-    }
-    .btn{
-      min-width: fit-content;
-    }
+	.sidebar .offcanvas-lg {
+		position: -webkit-sticky;
+		position: sticky;
+		top: 48px;
+	}
+	.navbar-search {
+		display: block;
+	}
 }
-.dashboard_card{
-  border-radius: $card_radius;
-  border-color: $white_color;
-  &:not(:last-child){
-    margin-bottom: 1.4rem;
-  }
+
+//
+.admin_container_main {
+	min-height: calc(100vh - 100px);
+	background-color: #f8f8fa;
+}
+.sidebar {
+	background-color: $white_color !important;
+	padding: 1.5rem;
+}
+.common_modal {
+	.common_modal_icon {
+		max-height: 74px;
+	}
+	.modal-dialog {
+		max-width: 384px;
+	}
+	.modal-content {
+		@include card_radius;
+	}
+	.modal-body {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 2rem 1.7rem;
+	}
+	.common_modal_footer {
+		margin-top: 3rem;
+		width: 100%;
+		.btn {
+			width: 100%;
+		}
+	}
+}
+.search_header_card {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	.input-group {
+		max-width: 385px;
+	}
+	.btn {
+		min-width: fit-content;
+	}
+}
+.dashboard_card {
+	border-radius: $card_radius;
+	border-color: $white_color;
+	&:not(:last-child) {
+		margin-bottom: 1.4rem;
+	}
 }
 .my_vehicle_desc_header {
-  @include flex_center;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 1.5rem
+	@include flex_center;
+	justify-content: space-between;
+	gap: 1rem;
+	margin-bottom: 1.5rem;
 }
-.my_vehicle_desc_header_cta{
-  @include flex_center;
-  gap: 1rem;
+.my_vehicle_desc_header_cta {
+	@include flex_center;
+	gap: 1rem;
 }
-.breadcrumb_c{
-  color: $black_color;
-  text-decoration: none;
-  @include flex_center;
-  gap: .8rem;
-  font-weight: 600;
-  cursor: pointer;
-  margin-bottom: 1.4rem;
+.breadcrumb_c {
+	color: $black_color;
+	text-decoration: none;
+	@include flex_center;
+	gap: 0.8rem;
+	font-weight: 600;
+	cursor: pointer;
+	margin-bottom: 1.4rem;
 }
 .back_icon {
-  padding: 1rem;
-  background-color: #f8f9fa;
-  height: 43px;
-  width: 43px;
-  @include flex_center_center;
-  border-radius: $global_radius;
+	padding: 1rem;
+	background-color: #f8f9fa;
+	height: 43px;
+	width: 43px;
+	@include flex_center_center;
+	border-radius: $global_radius;
 }
-.dashboard_header{
-  background-color: $white_color;
-}
-.sidebar_itm_wrapper {
-  li {
-    padding: 0.8rem;
-    border-radius: 10px;
-    @include flex_center;
-    gap: .5rem;
-  }
+.dashboard_header {
+	background-color: $white_color;
 }
 .sidebar_itm_wrapper {
-  gap: 1rem;
+	li {
+		padding: 0.8rem;
+		border-radius: 10px;
+		@include flex_center;
+		gap: 0.5rem;
+	}
+}
+.sidebar_itm_wrapper {
+	gap: 1rem;
 }
 label.drop_upload_itm {
-  @include flex_center;
-  flex-direction: column;
-  gap: 2rem;
-  padding: 2rem;
-  border: 2px dashed #000;
-  border-radius: $card_radius;
-  text-align: center;
+	@include flex_center;
+	flex-direction: column;
+	gap: 2rem;
+	padding: 2rem;
+	border: 2px dashed #000;
+	border-radius: $card_radius;
+	text-align: center;
 }
-.uploaded_img{
-  margin-top: 2rem;
-  @include gridRep(110,1,2rem,2rem);
-  .uploaded_img_itm{
-    max-height: 110px;
-    @include card_radius;
-    overflow: hidden;
-    img{
-      object-fit: cover;
-      height: 100%;
-    }
-  }
-  
+.uploaded_img {
+	margin-top: 2rem;
+	@include gridRep(110, 1, 2rem, 2rem);
+	.uploaded_img_itm {
+		max-height: 110px;
+		@include card_radius;
+		overflow: hidden;
+		img {
+			object-fit: cover;
+			height: 100%;
+		}
+	}
 }
 
 .sidebar_itm_wrapper {
-  li{
-    font-weight: 500;
-    &:hover {
-      background: rgba(226, 28, 33, 0.10)!important;
-      color: $primary_color;
-    }
-  }
+	li {
+		font-weight: 500;
+		&:hover {
+			background: rgba(226, 28, 33, 0.1) !important;
+			color: $primary_color;
+		}
+	}
 }
+
+.sidebar_itm_wrapper li {
+	color: rgba(0, 0, 0, 0.7);
+	font-family: Barlow;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	padding: 9px 20px;
+}
+.sidebar_itm_wrapper li a,
+.sidebar_itm_wrapper li i {
+	color: rgba(0, 0, 0, 0.7);
+	text-decoration: none;
+}
+.sidebar_itm_wrapper li i {padding-right: 0.5rem;}
+.sidebar_itm_wrapper li.active , .sidebar_itm_wrapper li:hover {
+	border-radius: 10px;
+	background: rgba(226, 28, 33, 0.1) !important;
+	display: flex;
+	color: var(--Primary, #e21c21);
+  cursor: pointer;
+}
+
+.sidebar_itm_wrapper li.active a,
+.sidebar_itm_wrapper li.active i,
+.sidebar_itm_wrapper li:hover a,
+.sidebar_itm_wrapper li:hover i  {
+	color: var(--Primary, #e21c21);
+}
+* {
+	text-decoration: none;
+}
+
+header.navbar[data-bs-theme="dark"] {
+	border: 0 !important;
+}
+
+.form-control
+{    background-color: #fff;
+  border-color: #dbdbdb;}
+  .searchBarTopBtn   .form-control,
+  .searchBarTopBtn .input-group-text {background: none; border: 0;}
+  .searchBarTopBtn .input-group{border:1px solid #dbdbdb; border-radius: 5px;}
+  .ProductSliderRightComp .heding_l  {color: var(--Primary, #E21C21);}

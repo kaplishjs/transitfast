@@ -29,7 +29,7 @@ function index() {
             <div className="container mb-5">
             {
               
-              carList.slice(0,6).map((item, index) => {
+              carList?.slice(0,6).map((item, index) => {
               return (
                 <>
                 <div className="product_itm card">
@@ -72,7 +72,7 @@ function index() {
                 </div>
               </div>
               <div className="col-md-7 hero_img">
-                <img  className="img-fluid w-100" src="assests/images/Brand_heroImg.jpg" alt="" srcset="" />
+                <img  className="img-fluid w-100" src="assests/images/bannerHome.jpg" alt="" srcset="" />
               </div>
             </div>
 

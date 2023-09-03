@@ -9,7 +9,7 @@ export default function Sidebar() {
     typeof window !== 'undefined' && localStorage.clear("")
   }
   return (
-    <>  <div class="sidebar border border-right  col-md-3 col-lg-2 offcanvas-md offcanvas-end " tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
+    <>  <div class="sidebar border1 border-right1  col-md-3 col-lg-2 offcanvas-md offcanvas-end " tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
     <div class="offcanvas-header">
       <h5 class="offcanvas-title" id="sidebarMenuLabel">Company name</h5>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu" aria-label="Close"></button>
@@ -19,11 +19,11 @@ export default function Sidebar() {
 
       </ul> */}
       <ul class="nav flex-column mb-auto sidebar_itm_wrapper">
-        <li className="bg-body-tertiary"><i class="fas fa-car"></i> <Link href="/">Home</Link></li>
-        <li className="bg-body-tertiary"><i class="fas fa-car"></i> <Link href="my-vehicle">My Vehicles</Link></li>
-        <li className="bg-body-tertiary"><i class="fas fa-car"></i> <Link href="request">Request</Link></li>
-        <li className="bg-body-tertiary"><i class="fas fa-car"></i> <Link href="my-account">My Account</Link></li>
-        <li className="bg-body-tertiary"><i class="fas fa-car"></i> <Link onClick={handleLogout} href="/">Logout</Link></li>
+        <li className="bg-body-tertiary active"> <Link href="/"><i class="fas fa-home"></i> Home</Link></li>
+        <li className="bg-body-tertiary"><Link href="my-vehicle"><i class="fas fa-car"></i>  My Vehicles</Link></li>
+        <li className="bg-body-tertiary"><Link href="request"><i class="fas fa-clipboard-list"></i>  Request</Link></li>
+        <li className="bg-body-tertiary"> <Link href="my-account"><i class="far fa-user"></i> My Account</Link></li>
+        <li className="bg-body-tertiary"> <Link onClick={handleLogout} href="/"><i class="fas fa-sign-out-alt"></i> Logout</Link></li>
 
       </ul>
     </div>
