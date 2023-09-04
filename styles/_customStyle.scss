@@ -415,3 +415,12 @@
 
 .section_margin {    margin: 2.66rem 0;}
 .ViewSplOfferBtns {display: flex; justify-content: space-between;}
+.FAQPage ul  { padding: 0; margin: 0; list-style: none; }
+.FAQPage ul .faqHeading { padding: 0; margin: 0 0 5px; font-weight: bold;}
+.FAQPage ul p {padding-left: 15px;}
+.FAQPage ul li {margin: 0 0 15px;}
+.FAQPage ul  .lastText  {padding-left: 0;}
+.HomeSecondBannerText {margin: 0; padding: 0;}
+.HomeSecondBannerText li { list-style: disc; list-style-position: inside;  padding-left: 10px; }
+.HomeSecondBannerText li p {margin: 0; padding: 0; display: inline-block;} 
+.HomeSecondBannerText li p.lastBig {position: relative; top: -23px; left: 20px;}

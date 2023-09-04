@@ -2,11 +2,11 @@ import React from 'react'
 import AdminLayout from '../../components/AdminLayout'
 
 function MyVehicle() {
-  return (
+  return ( 
     <AdminLayout>
-         <div className="card dashboard_card ">
+         <div className="card dashboard_card CardTopSearchButtonsComp">
     <div className="card-body">
-        <div className="search_header_card">
+        <div className="search_header_card searchBarTopBtn">
         <div class="input-group">
             <div class="input-group-text">
                <i class="fas fa-search"></i>
@@ -18,7 +18,7 @@ function MyVehicle() {
     </div>
   </div>
 
-  <div className="card dashboard_card ">
+  <div className="card dashboard_card ProductSliderRightComp">
     <div className="card-body">
         <div className="container">
           <div className="row">
@@ -58,7 +58,7 @@ function MyVehicle() {
       </a>
       <div className="row">
             <div className="col-md-7">
-                  <div className="search_header_card mb-3">
+                  <div className="search_header_card mb-3 searchBarTopBtn">
                   <div class="input-group">
                       <div class="input-group-text">
                         <i class="fas fa-search"></i>
