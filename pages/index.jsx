@@ -111,7 +111,7 @@ export default function Signup() {
 						<div className="col-md-7 hero_img">
 							<img
 								className="img-fluid w-100"
-								src="assests/images/bannerHome.jpg"
+								src="assests/images/transitFirst.png"
 								alt=""
 								srcset=""
 							/>
