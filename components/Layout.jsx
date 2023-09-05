@@ -132,8 +132,8 @@ function Layout({children}) {
               </div><div className="col-md-3">
                 <h3>Legal</h3>
                 <div className="link_list">
-                <a href="">Terms and Conditions</a>
-                <a href="">Frequent Questions</a>
+                <Link href="terms-condition">Terms and Conditions</Link>
+                <Link href="faq">Frequent Questions</Link>
                 </div>
               </div>
             </div>

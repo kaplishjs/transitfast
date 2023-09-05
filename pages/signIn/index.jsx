@@ -25,11 +25,12 @@ function SignIn(props) {
       .then((res) => {
         console.log("res", res);
         typeof window !== "undefined" &&
-          localStorage.setItem("accessToken", res.data.data.accessToken);
+          localStorage.setItem("accessToken", res.data.meta.accessToken);
         typeof window !== "undefined" &&
-          localStorage.setItem("refreshToken", res.data.data.refreshToken);
+          localStorage.setItem("refreshToken", res.data.meta.refreshToken);
         typeof window !== "undefined" &&
           localStorage.setItem("isLoggedIn", true);
+          localStorage.setItem('user', JSON.stringify( res.data.data));
         router.push("/admin/my-account");
       })
       .catch((error) => {
