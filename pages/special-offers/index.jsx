@@ -6,12 +6,12 @@ import { transitApi } from '../../utils/AxiosInstance';
 
 function index() {
 
-  const [carList, setCarList] = React.useState([carData,carData,carData,carData,carData,carData,carData]);
+  const [carList, setCarList] = React.useState([carData,carData,carData,carData,carData,carData]);
   React.useEffect(()=>{
    transitApi.get('/v1/vehicle').
     then((res) => {
       console.log(res);
-      setCarList();
+      // setCarList();
     }).catch((error)=>{
       console.log(error);
     })

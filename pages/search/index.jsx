@@ -12,7 +12,7 @@ function index() {
    transitApi.get('/v1/vehicle').
     then((res) => {
       console.log(res);
-      setCarList();
+      // setCarList();
     }).catch((error)=>{
       console.log(error);
     })
