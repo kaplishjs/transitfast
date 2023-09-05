@@ -43,7 +43,6 @@ function index() {
                     <h5 className="product_itm_title mb-0">£498.00</h5>
                     <Link className="btn  btn-outline-danger" href={`/car-details/${item._id}`}>View Deals</Link>
                     </div>
-                    
                 </div>
             </div>
                 </>
@@ -102,7 +101,6 @@ function index() {
               </div>
     </div>
   </section>
-
     </Layout>
   )
 }

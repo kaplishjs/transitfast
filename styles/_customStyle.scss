@@ -410,17 +410,127 @@
 .pricePound h5,
 .pricePound h4 {
     font-size: 1.25rem;
-    color: var(--bs-heading-color);;
+    color: var(--bs-heading-color);
+    ;
 }
 
-.section_margin {    margin: 2.66rem 0;}
-.ViewSplOfferBtns {display: flex; justify-content: space-between;}
-.FAQPage ul  { padding: 0; margin: 0; list-style: none; }
-.FAQPage ul .faqHeading { padding: 0; margin: 0 0 5px; font-weight: bold;}
-.FAQPage ul p {padding-left: 15px;}
-.FAQPage ul li {margin: 0 0 15px;}
-.FAQPage ul  .lastText  {padding-left: 0;}
-.HomeSecondBannerText {margin: 0; padding: 0;}
-.HomeSecondBannerText li { list-style: disc; list-style-position: inside;  padding-left: 10px; }
-.HomeSecondBannerText li p {margin: 0; padding: 0; display: inline-block;} 
-.HomeSecondBannerText li p.lastBig {position: relative; top: -23px; left: 20px;}
+.section_margin {
+    margin: 2.66rem 0;
+}
+
+.ViewSplOfferBtns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.FAQPage ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.FAQPage ul .faqHeading {
+    padding: 0;
+    margin: 0 0 5px;
+    font-weight: bold;
+}
+
+.FAQPage ul p {
+    padding-left: 15px;
+}
+
+.FAQPage ul li {
+    margin: 0 0 15px;
+}
+
+.FAQPage ul .lastText {
+    padding-left: 0;
+}
+
+.HomeSecondBannerText {
+    margin: 0;
+    padding: 0;
+}
+
+.HomeSecondBannerText li {
+    list-style: disc;
+    list-style-position: inside;
+    padding-left: 10px;
+}
+
+.HomeSecondBannerText li p {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+.HomeSecondBannerText li p.lastBig {
+    position: relative;
+    top: -23px;
+    left: 20px;
+}
+
+table.dashboardTable {
+    width: 100%;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1.54rem 0 4rem;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+button {
+    padding: 5px 10px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+table.dashboardTable  img {
+    max-width: 100px;
+    max-height: auto;
+}
+
+table.dashboardTable  img {
+    max-width: 100%;
+    max-height: auto;
+}
+
+
+//   img {
+// 	max-width: 100%;
+// 	max-height: 100%;
+// }
+
+.tableImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tableButton {
+    text-align: center;
+}
+
+.notificationContainer {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    border-radius: 0;
+}
+
+.alert.hide {
+    display: none;
+}
+.buttonGap a{ margin: 0 10px; } 
+
+.tableImage img {max-height: 180px;}

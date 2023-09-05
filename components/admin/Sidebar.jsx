@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React, { useState } from "react";
 
 export default function Sidebar() {
@@ -36,7 +37,7 @@ export default function Sidebar() {
               className={`bg-body-tertiary ${activeState === 0 && "active"}`}
               onClick={() => setActiveState(0)}
             >
-              {" "}
+             
               <Link href="/">
                 <i class="fas fa-home"></i> Home
               </Link>

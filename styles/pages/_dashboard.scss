@@ -158,19 +158,22 @@ label.drop_upload_itm {
 	color: rgba(0, 0, 0, 0.7);
 	text-decoration: none;
 }
-.sidebar_itm_wrapper li i {padding-right: 0.5rem;}
-.sidebar_itm_wrapper li.active , .sidebar_itm_wrapper li:hover {
+.sidebar_itm_wrapper li i {
+	padding-right: 0.5rem;
+}
+.sidebar_itm_wrapper li.active,
+.sidebar_itm_wrapper li:hover {
 	border-radius: 10px;
 	background: rgba(226, 28, 33, 0.1) !important;
 	display: flex;
 	color: var(--Primary, #e21c21);
-  cursor: pointer;
+	cursor: pointer;
 }
 
 .sidebar_itm_wrapper li.active a,
 .sidebar_itm_wrapper li.active i,
 .sidebar_itm_wrapper li:hover a,
-.sidebar_itm_wrapper li:hover i  {
+.sidebar_itm_wrapper li:hover i {
 	color: var(--Primary, #e21c21);
 }
 * {
@@ -181,10 +184,19 @@ header.navbar[data-bs-theme="dark"] {
 	border: 0 !important;
 }
 
-.form-control
-{    background-color: #fff;
-  border-color: #dbdbdb;}
-  .searchBarTopBtn   .form-control,
-  .searchBarTopBtn .input-group-text {background: none; border: 0;}
-  .searchBarTopBtn .input-group{border:1px solid #dbdbdb; border-radius: 5px;}
-  .ProductSliderRightComp .heding_l  {color: var(--Primary, #E21C21);}
+.form-control {
+	background-color: #fff;
+	border-color: #dbdbdb;
+}
+.searchBarTopBtn .form-control,
+.searchBarTopBtn .input-group-text {
+	background: none;
+	border: 0;
+}
+.searchBarTopBtn .input-group {
+	border: 1px solid #dbdbdb;
+	border-radius: 5px;
+}
+.ProductSliderRightComp .heding_l {
+	color: var(--Primary, #e21c21);
+}
