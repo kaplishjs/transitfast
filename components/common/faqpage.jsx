@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function faqpage() {
+export default function Faqpage() {
 	return (
        
 		<>
