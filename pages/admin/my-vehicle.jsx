@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import axios from 'axios';
 import AdminLayout from '../../components/AdminLayout'
 import { transitApi } from '../../utils/AxiosInstance';
-
+import { useRouter } from "next/router";
 
 function MyVehicle() {
-
+  const router = useRouter();
   const [licencePlate, setLicencePlate] = useState(null);
   const [carDetails, seCarDetails] = useState({
     title: '',
@@ -103,7 +103,7 @@ function MyVehicle() {
             </div>
           <input type="search" class="form-control ps-0" placeholder="Search any vehicle..." aria-label="Search any vehicle..."/>
         </div>
-        <button className="btn btn-danger">Create Deal</button>
+        <button className="btn btn-danger" onClick={()=> router.push('/admin/create-vehicle')}>Create Deal</button>
         <button className="btn btn-danger" onClick={()=>hanleFetchCarDetails()}>Fetch Deal</button>
         </div>
     </div>
@@ -120,7 +120,7 @@ function MyVehicle() {
                 <div className="my_vehicle_desc_header">
                   <h2 className="heding_l mb-0">£6,500</h2>
                   <div className="my_vehicle_desc_header_cta">
-                    <button className='rounded-pill btn btn-outline-success'>Edit</button>
+                    <button className='rounded-pill btn btn-outline-success' onClick={() => router.push('/admin/edit-vehicle')}>Edit</button>
                     <button className='rounded-pill btn btn-outline-danger'>Delete</button>
                   </div>
                 </div>   
@@ -142,151 +142,6 @@ function MyVehicle() {
         </div>
     </div>
   </div>
-  <div className="card dashboard_card">
-  <div className="card-body">
-      <a className="breadcrumb_c">
-          <span className="back_icon"><i class="fas fa-arrow-left"></i> </span>    <span>Edit Deal</span>
-      </a>
-      <div className="row">
-            <div className="col-md-7">
-                  <div className="search_header_card mb-3">
-                  <div class="input-group">
-                      <div class="input-group-text">
-                        <i class="fas fa-search"></i>
-                      </div>
-                    <input type="search" class="form-control ps-0" placeholder="Search any vehicle..." aria-label="Search any vehicle..."/>
-                  </div>
-                  <button className="btn btn-danger" onClick={()=> handleCreateDeal()}>Create Deal</button>
-                  </div>
-                  <div className="row">
-                        <div className="col-md-12 mb-3">
-                              <input className="form-control" type="text" placeholder="Title"  onChange={(e)=> handleChange(e)} name="title" id="" />
-                        </div>
-                        <div className="col-md-12 mb-3">
-                              <textarea className="form-control" name="description" placeholder="Car Description"  onChange={(e)=> handleChange(e)} id="" cols="30" rows="5"></textarea>
-                        </div>
-                        <div className="col-md-6 mb-3">
-                          <input className="form-control" type="text" value={carDetails.make} placeholder="Make" name="make" id="" disabled/>
-                          {/* <select class="form-select form-control" aria-label="Default select example">
-                          <option selected>Make</option>
-                          <option value="1">One</option>
-                        </select> */}
-                        </div>
-                        <div className="col-md-6 mb-3">
-                          <input className="form-control" type="text" value={carDetails.year}  placeholder="Year" name="year" id="" disabled />
-
-                          {/* <select class="form-select form-control" aria-label="Default select example">
-                          <option selected>Year</option>
-                          <option value="1">One</option>
-                        </select> */}
-                        </div>
-                        <div className="col-md-6 mb-3">
-                          <input className="form-control" type="text" value={carDetails.model}  placeholder="Model" name="model" id="" disabled/>
-
-                          {/* <select class="form-select form-control" aria-label="Default select example">
-                          <option selected>Model</option>
-                          <option value="1">One</option>
-                        </select> */}
-                        </div>
-                        <div className="col-md-6 mb-3">
-                          <input className="form-control" type="text" value={carDetails.variantType} placeholder="Variant Type" name="variantType" onChange={(e)=> handleChange(e)} id="" />
-
-                          {/* <select class="form-select form-control" aria-label="Default select example">
-                          <option selected>Variant Type</option>
-                          <option value="1">One</option>
-                        </select> */}
-                        </div>
-                        <div className="col-md-6 mb-3">
-                          <input className="form-control" type="text" value={carDetails.mileage} placeholder="Mileage" name="mileage" id="" onChange={(e)=> handleChange(e)}/>
-
-                          {/* <select class="form-select form-control" aria-label="Default select example">
-                          <option selected>Mileage </option>
-                          <option value="1">One</option>
-                        </select> */}
-                        </div>
-                        <div className="col-md-6 mb-3">
-                          <input className="form-control" type="text" value={carDetails.engineSize} placeholder="Engine size" name="engineSize" id="" disabled/>
-
-                          {/* <select class="form-select form-control" aria-label="Default select example">
-                          <option selected>Engine size </option>
-                          <option value="1">One</option>
-                        </select> */}
-                        </div>
-                        <div className="col-md-6 mb-3">
-                          <input className="form-control" type="text" value={carDetails.color} placeholder="Color" name="color" id="" disabled/>
-
-                          {/* <select class="form-select form-control" aria-label="Default select example">
-                          <option selected>Color </option>
-                          <option value="1">One</option>
-                        </select> */}
-                        </div>
-
-                        <div className="col-md-6 mb-3">
-                          <input className="form-control" type="text" value={carDetails.transmission} placeholder="Transmission" name="transmission" id="" disabled/>
-
-                          {/* <select class="form-select form-control" aria-label="Default select example">
-                          <option selected>Transmission </option>
-                          <option value="1">One</option>
-                        </select> */}
-                        </div>
-
-                        <div className="col-md-6 mb-3">
-                          <input className="form-control" type="text" value={carDetails.fuel} placeholder="Fuel" name="fuel" id="" disabled />
-
-                          {/* <select class="form-select form-control" aria-label="Default select example">
-                          <option selected>Fuel </option>
-                          <option value="1">One</option>
-                        </select> */}
-                        </div>
-
-                        <div className="col-md-6 mb-3">
-                        <input className="form-control" type="text" value={carDetails.price} placeholder="Price" name="price" id="" onChange={(e)=> handleChange(e)}/>
-
-                          {/* <select class="form-select form-control" aria-label="Default select example">
-                          <option selected>Price </option>
-                          <option value="1">One</option>
-                        </select> */}
-                        </div>                       
-                        
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"/>
-                    <label class="form-check-label" for="inlineCheckbox1">Allow offers</label>
-                  </div>
-
-                  <div className="d-flex gap-3 mt-4">
-                        <button className="btn btn-outline-danger">Go Back</button>
-                        <button className="btn btn-danger">Update Deal</button>
-
-                  </div>
-            </div>
-            <div className="col-md-5 section_padding">
-                <div className="drop_upload_main">
-                      <label  className="drop_upload_itm" htmlFor="drop_upload">
-                        <input type="file" className="d-none" name="" id="drop_upload"    onChange={handleUploadImage} multiple/>
-                        <img src="/assests/images/gallary.svg" alt="" srcset="" />
-                        <p className="mb-0">Drop your images here, or
-                            select <span className="fc_primary fw-semibold">click to browse</span></p>
-                      </label>
-                </div>
-                <div className="uploaded_img">
-                    <div className="uploaded_img_itm">
-                        <img className='img-fluid w-100' src="/assests/auth_images/car_img_resetSuccessfull.png" alt="" srcset="" />
-                    </div>
-                    <div className="uploaded_img_itm">
-                        <img className='img-fluid w-100' src="/assests/auth_images/car_img_resetSuccessfull.png" alt="" srcset="" />
-                    </div>
-                    <div className="uploaded_img_itm">
-                        <img className='img-fluid w-100' src="/assests/auth_images/car_img_resetSuccessfull.png" alt="" srcset="" />
-                    </div>
-                    <div className="uploaded_img_itm">
-                        <img className='img-fluid w-100' src="/assests/auth_images/car_img_resetSuccessfull.png" alt="" srcset="" />
-                    </div>
-                </div>
-            </div>
-        </div>
-  </div>
-</div>
     </AdminLayout>
   )
 }

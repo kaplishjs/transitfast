@@ -1,7 +1,15 @@
-import React, { useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
 
 export default function Sidebar() {
-  const [activeState, setActiveState] = useState(0);
+  const router = useRouter();
+  const [activeState, setActiveState] = useState(null);
+  console.log(router.asPath)
+  
+  useEffect(() => {
+    setActiveState(router.asPath);
+  }, [])
 
   const handleLogout = () => {
     typeof window !== "undefined" && localStorage.clear("");
@@ -33,8 +41,7 @@ export default function Sidebar() {
       </ul> */}
           <ul class="nav flex-column mb-auto sidebar_itm_wrapper">
             <li
-              className={`bg-body-tertiary ${activeState === 0 && "active"}`}
-              onClick={() => setActiveState(0)}
+              className={`bg-body-tertiary`}
             >
               {" "}
               <Link href="/">
@@ -42,7 +49,7 @@ export default function Sidebar() {
               </Link>
             </li>
             <li
-              className={`bg-body-tertiary ${activeState === 1 && "active"}`}
+              className={`bg-body-tertiary ${['/admin/my-vehicle', '/admin/edit-vehicle', '/admin/create-vehicle'].includes(activeState) && "active"}`}
               onClick={() => setActiveState(1)}
             >
               <Link href="my-vehicle">
@@ -50,7 +57,7 @@ export default function Sidebar() {
               </Link>
             </li>
             <li
-              className={`bg-body-tertiary ${activeState === 2 && "active"}`}
+              className={`bg-body-tertiary ${activeState === '' && "active"}`}
               onClick={() => setActiveState(2)}
             >
               <Link href="request">
@@ -58,7 +65,7 @@ export default function Sidebar() {
               </Link>
             </li>
             <li
-              className={`bg-body-tertiary ${activeState === 3 && "active"}`}
+              className={`bg-body-tertiary ${activeState === '/admin/my-account' && "active"}`}
               onClick={() => setActiveState(3)}
             >
               {" "}

@@ -424,3 +424,30 @@
 .HomeSecondBannerText li { list-style: disc; list-style-position: inside;  padding-left: 10px; }
 .HomeSecondBannerText li p {margin: 0; padding: 0; display: inline-block;} 
 .HomeSecondBannerText li p.lastBig {position: relative; top: -23px; left: 20px;}
+
+
+
+.circle-container {
+    display: flex;
+  }
+  
+  .circle {
+    width: 150px;
+    height: 150px;
+    background-color: #ddd;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .circle span {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+  }
