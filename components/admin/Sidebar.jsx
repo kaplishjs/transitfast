@@ -43,16 +43,16 @@ export default function Sidebar() {
             <li
               className={`bg-body-tertiary`}
             >
-              {" "}
+             
               <Link href="/">
                 <i class="fas fa-home"></i> Home
               </Link>
             </li>
             <li
-              className={`bg-body-tertiary ${['/admin/my-vehicle', '/admin/edit-vehicle', '/admin/create-vehicle'].includes(activeState) && "active"}`}
+              className={`bg-body-tertiary ${['/admin/my-vehicle',"all-vehicle", '/admin/edit-vehicle', '/admin/create-vehicle'].includes(activeState) && "active"}`}
               onClick={() => setActiveState(1)}
             >
-              <Link href="my-vehicle">
+              <Link href="all-vehicle">
                 <i class="fas fa-car"></i> My Vehicles
               </Link>
             </li>
@@ -60,7 +60,7 @@ export default function Sidebar() {
               className={`bg-body-tertiary ${activeState === '' && "active"}`}
               onClick={() => setActiveState(2)}
             >
-              <Link href="request">
+              <Link href="my-vehicle">
                 <i class="fas fa-clipboard-list"></i> Request
               </Link>
             </li>

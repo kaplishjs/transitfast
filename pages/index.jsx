@@ -9,6 +9,8 @@ import { useFormik } from "formik";
 import React from "react";
 import { transitApi } from "../utils/AxiosInstance";
 import { carData } from "../utils/cardetials";
+// import AlertNotification from "../components/common/AlertNotification";
+import Notification from "../components/common/AlertNotification";
 
 export default function Signup() {
 	const [carList, setCarList] = React.useState([
@@ -20,6 +22,12 @@ export default function Signup() {
 		carData,
 		carData,
 	]);
+	const [showNotification, setShowNotification] = React.useState(false);
+
+	const handleShowNotification = () => {
+		setShowNotification(true);
+		  };
+
 	React.useEffect(() => {
 		transitApi
 			.get("/v1/vehicle")
@@ -70,9 +78,10 @@ export default function Signup() {
 	return (
 		<Layout>
 			{/* hero section */}
-
+			{/* <AlertNotification message="This is a success alert!" type="success" /> */}
 			<section className="hero_wrapper section_margin HomePageData sectionMarAdjust">
 				<div className="container">
+				
 					<div className="row">
 						<div className="col-md-5 hero_description">
 							<h1 className="heding_xl">
@@ -119,9 +128,7 @@ export default function Signup() {
 					</div>
 				</div>
 			</section>
-
 			{/* brand section */}
-
 			<section className="brand_wrapper section_margin">
 				<div className="container">
 					<img
@@ -189,9 +196,7 @@ export default function Signup() {
 
 			{/* filter section */}
 			<SearchOption />
-
 			{/* feature setion */}
-
 			<section className="features_wrapper section_margin">
 				<div className="container">
 					<div className="row">

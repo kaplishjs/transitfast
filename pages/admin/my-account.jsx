@@ -90,7 +90,7 @@ function MyAccount() {
           <div className="circle-container">
             <div
               className="circle"
-              style={{ backgroundImage: `url(${selectedImage})` }}
+              style={{ backgroundImage: `https://www.transitfastautos.com/api/${profileData?.profile_pic}` }}
               onClick={handleClick}
             >
               {!selectedImage && <span>Click to Upload</span>}

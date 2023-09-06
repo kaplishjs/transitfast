@@ -24,6 +24,10 @@ function MyVehicle() {
     vehicleImage: [],
   });
 
+  const getAdminID = typeof window !== "undefined" &&
+  JSON.parse(localStorage.getItem("user"));
+
+  // console.log(getAdminID)
   const handleChange = (event) => {
     seCarDetails({
       ...carDetails,
@@ -33,8 +37,9 @@ function MyVehicle() {
 
 
   const handleCreateDeal = () => {
+    
     const formData = new FormData();
-    formData.append("adminId", "64d7f6f2936a1106c189db4a");
+    formData.append("adminId", getAdminID._id);
     // formData.append("vehicle_image", carDetails?.vehicleImage);
     formData.append("licence_plate", licencePlate || 'DE60JGO');
     formData.append("title", carDetails?.title);
@@ -57,6 +62,7 @@ function MyVehicle() {
     transitApi
     .post("/v1/vehicle", formData)
     .then((res) => {
+      router.push("all-vehicle")
     })
     .catch((error) => {
       console.error("error", error);
@@ -209,7 +215,7 @@ function MyVehicle() {
 
                   <div className="d-flex gap-3 mt-4">
                         <button className="btn btn-outline-danger">Go Back</button>
-                        <button className="btn btn-danger">Update Deal</button>
+                        <button className="btn btn-danger" onClick={handleCreateDeal}>Update Deal</button>
 
                   </div>
             </div>

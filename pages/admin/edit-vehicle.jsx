@@ -209,7 +209,7 @@ function MyVehicle() {
 
                   <div className="d-flex gap-3 mt-4">
                         <button className="btn btn-outline-danger">Go Back</button>
-                        <button className="btn btn-danger">Update Deal</button>
+                        <button className="btn btn-danger" >Update Deal</button>
 
                   </div>
             </div>
