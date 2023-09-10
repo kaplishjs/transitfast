@@ -21,7 +21,6 @@ export default function Sidebar() {
 
 
   const openModal = () => {
-    alert(1);
     setIsModalOpen(true);
   };
 
