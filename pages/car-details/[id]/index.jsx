@@ -115,7 +115,7 @@ function index() {
                       </div>
                       </div> 
                       </div>
-                      <div className="col-md-6 car_detail_desc section_padding">
+                      <div className="car_detail_desc section_padding">
                       <h5 className="small_title">Fuel Type: Diesel</h5>
                       <h2 className="heading_m mb-4">Citroen Berlingo Van M BlueHDi 100 6-speed manual 650 Enterprise Edition</h2>
                       <div className="d-flex gap-2 flex-wrap mb-4">

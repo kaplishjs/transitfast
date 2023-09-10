@@ -16,8 +16,8 @@ function AllVehicle() {
   }
 
   useEffect(()=>{
-    getAllVehicle()
-  })
+    getAllVehicle();
+  },[]);
 
   const handleShowNotification = () => {
     setShowNotification(true);
@@ -28,12 +28,6 @@ function AllVehicle() {
         <div className="row">
           <div className="col-md-12">
             <div className="alertBox">
-              <Link
-                href='create-vehicle'
-                className="btn btn-primary"
-              >
-                Create Vehicle
-              </Link>
               {showNotification && (
                 <>
                   {/* <Notification className="notificationContainer alert-success" message="This is a notification message success." />
@@ -46,8 +40,16 @@ function AllVehicle() {
                 </>
               )}
             </div>
-
+            <div className="d-flex justify-content-between">
             <h1>Car Listings</h1>
+            <Link
+                href='create-vehicle'
+                className="btn btn-primary createVehicleBtn"
+              >
+                Create Vehicle
+              </Link>
+            </div>
+
             <table className="dashboardTable">
               <thead>
                 <tr>
@@ -69,14 +71,14 @@ function AllVehicle() {
                     <td className="tableButton">
                       <Link
                         className="btn btn-success subscribeBtn"
-                        href="my-vehicle"
+                        href={`/admin/my-vehicle/${car._id}`}
                       >
                         View
                       </Link>
                     </td>
-                    <td className="tableImage">
+                    {/* <td className="tableImage">
                       <img src={car.imageUrl} alt={car?.carName} />
-                    </td>
+                    </td> */}
                   </tr>
                 ))}
               </tbody>

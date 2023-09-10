@@ -75,7 +75,10 @@ function Layout({children}) {
               <form className="d-flex ms-auto buttonGap" role="search">
                 {/* <button className="btn btn-danger" type="submit"> */}
                 <Link className="btn btn-danger" href={isLoggedIn?'/admin/my-account':'/signup'}>{isLoggedIn?"My Account":"Sign Up"}</Link>
-                <Link className="btn btn-danger" href={isLoggedIn?'/admin/my-account':'/signIn'}>{isLoggedIn?null:"Sign In"}</Link>
+                {
+                  !isLoggedIn &&                 <Link className="btn btn-danger" href={isLoggedIn?'/admin/my-account':'/signIn'}>{"Sign In"}</Link>
+                }
+
                 {/* </button> */}
               </form>
             </div>

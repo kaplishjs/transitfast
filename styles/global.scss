@@ -22,3 +22,10 @@ body{
     font-family: 'Barlow', sans-serif;
     color: $secondary_color;
 }
+.mySwiperVertical{
+    height: 100%!important;
+}
+.modal{
+    display: block;
+    background-color: rgb(43 43 43 / 70%);
+}

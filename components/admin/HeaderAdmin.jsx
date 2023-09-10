@@ -1,6 +1,10 @@
+import Image from 'next/image';
 import React from 'react'
 
 export default function HeaderAdmin() {
+
+  const userDetails = typeof window !== "undefined" &&
+  JSON.parse(localStorage.getItem("user"));
   return (
     <>
     <header class="dashboard_header navbar sticky-top   p-0 border-bottom" data-bs-theme="dark">
@@ -10,7 +14,7 @@ export default function HeaderAdmin() {
 </a>
 
 <ul class="navbar-nav flex-row ">
-  <li className='nav-item'><img  src="https://i.pravatar.cc/60" class="rounded-circle" alt="..."/></li>
+ {userDetails?.profile_pic &&  <li className='nav-item'><Image  src={`https://www.transitfastautos.com/api/${userDetails?.profile_pic}`} width={50} height={50} class="rounded-circle" alt="..."/></li>}
   <li className="nav-item d-block d-md-none text-nowrap">
     <button class="nav-link px-3 text-black" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
     <i class="fas fa-bars"></i>

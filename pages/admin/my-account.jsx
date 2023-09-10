@@ -1,4 +1,5 @@
 "use-client";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import AdminLayout from "../../components/AdminLayout";
 import { transitApi } from "../../utils/AxiosInstance";
@@ -90,10 +91,16 @@ function MyAccount() {
           <div className="circle-container">
             <div
               className="circle"
-              style={{ backgroundImage: `https://www.transitfastautos.com/api/${profileData?.profile_pic}` }}
               onClick={handleClick}
             >
-              {!selectedImage && <span>Click to Upload</span>}
+              <Image
+                className="circle"
+                src={`https://www.transitfastautos.com/api/${profileData?.profile_pic}`}
+                width={200}
+                height={200}
+                blurDataURL={`https://www.transitfastautos.com/api/${profileData?.profile_pic}`}
+              />
+              {!profileData?.profile_pic && <span>Click to Upload</span>}
               <input
                 type="file"
                 accept="image/*"

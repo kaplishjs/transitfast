@@ -127,6 +127,7 @@ label.drop_upload_itm {
 		max-height: 110px;
 		@include card_radius;
 		overflow: hidden;
+		position: relative;
 		img {
 			object-fit: cover;
 			height: 100%;

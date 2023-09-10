@@ -1,17 +1,20 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios';
-import AdminLayout from '../../components/AdminLayout'
-import { transitApi } from '../../utils/AxiosInstance';
+import AdminLayout from '../../../components/AdminLayout'
+import { transitApi } from '../../../utils/AxiosInstance';
 import { useRouter } from 'next/router';
-import Modal from '../../components/common/modal';
+import Image from 'next/image';
+import Modal from '../../../components/common/modal';
 
 
 function MyVehicle() {
     const router = useRouter();
+    const { query : { id: routeId} } = router;
   const [licencePlate, setLicencePlate] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const [carDetails, seCarDetails] = useState({
+    _id: '',
     title: '',
     description: '',
     make: '',
@@ -25,22 +28,52 @@ function MyVehicle() {
     transmission: '',
     price: '',
     vehicleImage: [],
+    licence_plate: '',
   });
-
-  const getAdminID = typeof window !== "undefined" &&
+  const userDetails = typeof window !== "undefined" &&
   JSON.parse(localStorage.getItem("user"));
+  function getVehicle(){
+    transitApi.get(`v1/vehicle/${routeId}`)
+    .then((res)=>{
+  console.log("carDetails", routeId, res)
 
-  const openModal = () => {
+        const {car_description,color,engine_size,fuel,mileage,model,price,title,transmission,vehicle_image,veriant_type,year,make,licence_plate, _id } = res?.data?.data;
+        seCarDetails({
+            title: title,
+            description: car_description,
+            make: make,
+            model: model,
+            mileage: mileage,
+            color: color,
+            fuel: fuel,
+            year: year,
+            variantType: veriant_type,
+            engineSize: engine_size,
+            transmission: transmission,
+            price: price,
+            vehicleImage: vehicle_image,
+            licence_plate,
+            _id
+        })
+        setActiveImage(res?.data?.data?.vehicle_image[0]);
+    })
+    .catch((err)=>console.log("ERR=>", err))
+  }
+
+  useEffect(()=>{
+    if(routeId) getVehicle();
+  },[routeId]);
+
+
+  const handleClickBack = () => {
+    router.push(`/admin/my-vehicle/${routeId}`);
     setIsModalOpen(true);
   };
 
   const closeModal = () => {
-    router.push('/admin/create-vehicle');
-    window.location.reload();
     setIsModalOpen(false);
   };
 
-  // console.log(getAdminID)
   const handleChange = (event) => {
     seCarDetails({
       ...carDetails,
@@ -50,11 +83,10 @@ function MyVehicle() {
 
 
   const handleCreateDeal = () => {
-    
     const formData = new FormData();
-    formData.append("adminId", getAdminID._id);
+    formData.append("adminId", userDetails?._id);
     // formData.append("vehicle_image", carDetails?.vehicleImage);
-    formData.append("licence_plate", licencePlate || 'DE60JGO');
+    formData.append("licence_plate", carDetails?.licence_plate);
     formData.append("title", carDetails?.title);
     formData.append("car_description", carDetails?.description);
     formData.append("year", carDetails?.year);
@@ -68,81 +100,53 @@ function MyVehicle() {
     formData.append("price", carDetails?.price);
     formData.append("make", carDetails?.make);
 
-
-    [...carDetails.vehicleImage].forEach(image => {
-      formData.append("vehicle_image", image)
-  });
-    // carDetails.vehicleImage.map((file) => formData.append("vehicle_image", file));
+//     [...carDetails.vehicleImage].forEach(image => {
+//       formData.append("vehicle_image", image)
+//   });
+    carDetails.vehicleImage.map((file) => formData.append("vehicle_image", file));
 
     transitApi
-    .post("/v1/vehicle", formData)
+    .patch(`/v1/vehicle/${carDetails?._id}`, formData)
     .then((res) => {
-      openModal();
+        setIsModalOpen(true);
     })
     .catch((error) => {
       console.error("error", error);
     });
   }
 
-  const hanleFetchCarDetails = () => {
-    axios.get(`https://dvlasearch.appspot.com/DvlaSearch?apikey=atLzcLDJ0UQaxlJR&licencePlate=${licencePlate || 'DE60JGO'}`)
-    .then((res) => {
-      const {co2Emissions, colour, cylinderCapacity, dateOfFirstRegistration, fuelType, make, model, mot, motDetails, 
-        revenueWeight, taxDetails, taxStatus, taxed, transmission, typeApproval, vin, wheelPlan, yearOfManufacture } = res?.data;
-      seCarDetails({
-        ...carDetails,
-        make: make,
-        model: model,
-        color: colour,
-        fuel: fuelType,
-        year: yearOfManufacture,
-        engineSize: cylinderCapacity,
-        transmission: transmission,
-      })
-      console.log(res.data);
-    })
-    .catch((error)=>{
-      console.log(error);
-    })
-  }
-  
   const handleUploadImage = (event) => {
+    console.log(event.target.files)
     seCarDetails({
       ...carDetails,
       vehicleImage : [...carDetails.vehicleImage, ...event.target.files]
     })
   }
 
-
-  const handleClickBack = () => {
-    router.push('/admin/all-vehicle');
-  };
-
-  console.log(carDetails)
   return (
     <AdminLayout>
   <div className="card dashboard_card">
   <div className="card-body">
       <a className="breadcrumb_c">
-          <span className="back_icon" onClick={()=> router.push('/admin/all-vehicle')}><i class="fas fa-arrow-left"></i> </span>    <span>Create Deal</span>
+          <span className="back_icon" onClick={()=> router.push('/admin/all-vehicle')}><i class="fas fa-arrow-left"></i> </span>    <span>Edit Deal</span>
       </a>
       <div className="row">
             <div className="col-md-7">
                   <div className="search_header_card mb-3">
-                  <div class="input-group">
-                      {/* <div class="input-group-text">
+                  {/* <div class="input-group">
+                      <div class="input-group-text">
                         <i class="fas fa-search"></i>
-                      </div> */}
-                    <input type="search" class="form-control" placeholder="Enter Licence Plate" aria-label="Enter Licence Plate"/>
+                      </div>
+                    <input type="search" class="form-control ps-0" placeholder="Search any vehicle..." aria-label="Search any vehicle..."/>
                   </div>
-                  <button className="btn btn-danger" onClick={()=> hanleFetchCarDetails()}>Search</button>
+                  <button className="btn btn-danger" onClick={()=> hanleFetchCarDetails()}>Click</button> */}
                   </div>
                   <div className="row">
                         <div className="col-md-12 mb-3">
-                              <input className="form-control" type="text" placeholder="Title"  onChange={(e)=> handleChange(e)} name="title" id="" />
+                              <input className="form-control" value={carDetails.title} type="text" placeholder="Title"  onChange={(e)=> handleChange(e)} name="title" id="" />
                         </div>
                         <div className="col-md-12 mb-3">
-                              <textarea className="form-control" name="description" placeholder="Car Description"  onChange={(e)=> handleChange(e)} id="" cols="30" rows="5"></textarea>
+                              <textarea className="form-control" value={carDetails.description} name="description" placeholder="Car Description"  onChange={(e)=> handleChange(e)} id="" cols="30" rows="5"></textarea>
                         </div>
                         <div className="col-md-6 mb-3">
                           <input className="form-control" type="text" value={carDetails.make} placeholder="Make" name="make" id="" disabled/>
@@ -234,8 +238,8 @@ function MyVehicle() {
                   </div>
 
                   <div className="d-flex gap-3 mt-4">
-                        <button className="btn btn-outline-danger" onClick={()=> router.push('/admin/all-vehicle')}>Go Back</button>
-                        <button className="btn btn-danger" onClick={handleCreateDeal}>Update Deal</button>
+                        <button className="btn btn-outline-danger">Go Back</button>
+                        <button className="btn btn-danger" onClick={()=> handleCreateDeal()}>Update Deal</button>
 
                   </div>
             </div>
@@ -248,6 +252,7 @@ function MyVehicle() {
                             select <span className="fc_primary fw-semibold">click to browse</span></p>
                       </label>
                 </div>
+                
                 <div className="uploaded_img">
                 { carDetails?.vehicleImage?.map((imageItem)=>(
              <div className="">
@@ -268,12 +273,12 @@ function MyVehicle() {
 </div>
 <Modal isOpen={isModalOpen} onClose={closeModal}>
 <div class="modal-body">
-        <img className='img-fluid common_modal_icon' src="/assests/images/dealCreated.jpg" alt="" srcset="" />
-        <h4 className='mb-0 fw-bold'>Deal Created!</h4>
-        <span>Good Job! Deal has been saved successfully.</span>
+        <img className='img-fluid common_modal_icon' src="/assests/images/thumbsUp.svg" alt="" srcset="" />
+        <h4 className='mb-0 fw-bold'>Changes Saved</h4>
+        <span>Changes have been saved successfully.</span>
         <div className="d-flex gap-3 common_modal_footer">
-        <button type="button" class="btn btn-outline-danger" onClick={closeModal}>+ New Deal</button>
-        <button type="button" class="btn btn-danger" onClick={()=> handleClickBack()}>Go Back</button>
+        <button type="button" class="btn btn-outline-danger" onClick={closeModal}>Cancel</button>
+        <button type="button" class="btn btn-danger" onClick={()=> handleClickBack()}>Go, Back</button>
         </div>
       </div>
 </Modal>

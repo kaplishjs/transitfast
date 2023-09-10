@@ -223,7 +223,9 @@
     width: 90%;
     margin: auto;
 }
-
+.swiper-button-lock{
+    display: inline-block!important;
+}
 .swiper-button svg {
     width: 1.5rem;
     height: 1.5rem;
@@ -572,3 +574,14 @@ table.dashboardTable  img {
 .buttonGap a{ margin: 0 10px; } 
 
 .tableImage img {max-height: 180px;}
+
+.createVehicleBtn{
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    height: 42px;
+}
+
+.searchVehicle{
+    background: var(--Fields-Color, #F7F7F9) !important;
+}
