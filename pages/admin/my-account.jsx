@@ -3,12 +3,15 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import AdminLayout from "../../components/AdminLayout";
 import { transitApi } from "../../utils/AxiosInstance";
+import Loader from "../../components/Loader";
 
 function MyAccount() {
   const [profileData, setProfileData] = useState({});
   const [selectedImage, setSelectedImage] = useState(null);
+  const [isLoading, setLoading] = useState(false)
 
   function getProfileData(file) {
+    setLoading(true)
     let formData = new FormData();
     for (const key in profileData) {
       formData.append(key, profileData[key]);
@@ -21,9 +24,11 @@ function MyAccount() {
         // console.log(res)
         const { id, password, _v, ...resD } = res.data.data;
         setProfileData(resD);
+        setLoading(false)
       })
       .catch((err) => {
         console.log(err);
+        setLoading(false)
       });
   }
   useEffect(() => {
@@ -86,6 +91,7 @@ function MyAccount() {
   console.log("profileData==>", profileData);
   return (
     <AdminLayout>
+     { isLoading&&<Loader />}
       <div className="card ">
         <div className="card-body">
           <div className="circle-container">
@@ -100,7 +106,7 @@ function MyAccount() {
                 height={200}
                 blurDataURL={`https://www.transitfastautos.com/api/${profileData?.profile_pic}`}
               />
-              {!profileData?.profile_pic && <span>Click to Upload</span>}
+              
               <input
                 type="file"
                 accept="image/*"

@@ -4,15 +4,22 @@ import Notification from "../../components/common/AlertNotification";
 import AdminLayout from "../../components/AdminLayout";
 import { transitApi } from "../../utils/AxiosInstance";
 import Link from "next/link";
+import Loader from "../../components/Loader";
 
 function AllVehicle() {
   const [showNotification, setShowNotification] = React.useState(false);
   const [allCar, setSetAllCar] = useState([])
+  const [isLoading, setLoading] = useState(false)
 
   function getAllVehicle(){
+    setLoading(true)
     transitApi.get("/v1/vehicle")
-    .then((res)=>console.log("RES=>", setSetAllCar(res.data.data)))
-    .catch((err)=>console.log("ERR=>", err))
+    .then((res)=>{
+      
+       setSetAllCar(res.data.data)
+       setLoading(false)
+      })
+    .catch((err)=> setLoading(false))
   }
 
   useEffect(()=>{
@@ -24,6 +31,7 @@ function AllVehicle() {
   };
   return (
     <AdminLayout>
+      {isLoading&&<Loader/>}
       <div className="container">
         <div className="row">
           <div className="col-md-12">

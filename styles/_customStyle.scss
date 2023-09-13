@@ -585,3 +585,83 @@ table.dashboardTable  img {
 .searchVehicle{
     background: var(--Fields-Color, #F7F7F9) !important;
 }
+
+
+//LOADER
+.loaderWrapper{
+    backdrop-filter: blur(1.5px);
+    position: fixed;
+    top: 0px;
+    z-index: 9999;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    pointer-events: unset;
+    .loader {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+    }
+}
+
+
+.car {
+	&__body {
+		animation: shake 0.2s ease-in-out infinite alternate;
+	}
+	
+	&__line {
+		transform-origin: center right;
+		stroke-dasharray: 22;
+		animation: line 0.8s ease-in-out infinite;
+		animation-fill-mode: both;
+		
+		&--top {
+			animation-delay: 0s;
+		}
+		
+		&--middle {
+			animation-delay: 0.2s;
+		}
+		
+		&--bottom {
+			animation-delay: 0.4s;
+		}
+	}
+}
+
+@keyframes shake {
+	0% {
+		transform: translateY(-1%);
+	}
+	100% {
+		transform: translateY(3%);
+	}
+}
+
+@keyframes line {
+	0% {
+		stroke-dashoffset: 22;
+	}
+	
+	25% {
+		stroke-dashoffset: 22;
+	}
+	
+	50% {
+		stroke-dashoffset: 0;
+	}
+	
+	51% {
+		stroke-dashoffset: 0;
+	}
+	
+	80% {
+		stroke-dashoffset: -22;
+	}
+	
+	100% {
+		stroke-dashoffset: -22;
+	}
+}
+/*************** END LOADER *******************/

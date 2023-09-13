@@ -31,7 +31,7 @@ function SignIn(props) {
         typeof window !== "undefined" &&
           localStorage.setItem("isLoggedIn", true);
           localStorage.setItem('user', JSON.stringify( res.data.data));
-        router.push("/admin/my-account");
+        router.push("/admin/all-vehicle");
       })
       .catch((error) => {
         setErrMsg(error.response.data.message);
