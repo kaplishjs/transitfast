@@ -172,10 +172,6 @@ function MyVehicle() {
                     id=""
                     disabled
                   />
-                  {/* <select class="form-select form-control" aria-label="Default select example">
-                          <option selected>Make</option>
-                          <option value="1">One</option>
-                        </select> */}
                 </div>
                 <div className="col-md-6 mb-3">
                   <input
@@ -187,11 +183,6 @@ function MyVehicle() {
                     id=""
                     disabled
                   />
-
-                  {/* <select class="form-select form-control" aria-label="Default select example">
-                          <option selected>Year</option>
-                          <option value="1">One</option>
-                        </select> */}
                 </div>
                 <div className="col-md-6 mb-3">
                   <input
@@ -235,11 +226,6 @@ function MyVehicle() {
                     id=""
                     onChange={(e) => handleChange(e)}
                   />
-
-                  {/* <select class="form-select form-control" aria-label="Default select example">
-                          <option selected>Mileage </option>
-                          <option value="1">One</option>
-                        </select> */}
                 </div>
                 <div className="col-md-6 mb-3">
                   <input
@@ -251,11 +237,6 @@ function MyVehicle() {
                     id=""
                     disabled
                   />
-
-                  {/* <select class="form-select form-control" aria-label="Default select example">
-                          <option selected>Engine size </option>
-                          <option value="1">One</option>
-                        </select> */}
                 </div>
                 <div className="col-md-6 mb-3">
                   <input
@@ -267,11 +248,6 @@ function MyVehicle() {
                     id=""
                     disabled
                   />
-
-                  {/* <select class="form-select form-control" aria-label="Default select example">
-                          <option selected>Color </option>
-                          <option value="1">One</option>
-                        </select> */}
                 </div>
 
                 <div className="col-md-6 mb-3">
@@ -284,11 +260,6 @@ function MyVehicle() {
                     id=""
                     disabled
                   />
-
-                  {/* <select class="form-select form-control" aria-label="Default select example">
-                          <option selected>Transmission </option>
-                          <option value="1">One</option>
-                        </select> */}
                 </div>
 
                 <div className="col-md-6 mb-3">
@@ -315,11 +286,6 @@ function MyVehicle() {
                     id=""
                     onChange={(e) => handleChange(e)}
                   />
-
-                  {/* <select class="form-select form-control" aria-label="Default select example">
-                          <option selected>Price </option>
-                          <option value="1">One</option>
-                        </select> */}
                 </div>
               </div>
               <div class="form-check form-check-inline">

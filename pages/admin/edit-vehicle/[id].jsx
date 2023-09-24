@@ -108,7 +108,8 @@ function MyVehicle() {
     transitApi
     .patch(`/v1/vehicle/${carDetails?._id}`, formData)
     .then((res) => {
-        setIsModalOpen(true);
+      router.push(`/admin/my-vehicle/${routeId}`);
+        // setIsModalOpen(true);
     })
     .catch((error) => {
       console.error("error", error);
@@ -271,7 +272,7 @@ function MyVehicle() {
         </div>
   </div>
 </div>
-<Modal isOpen={isModalOpen} onClose={closeModal}>
+{/* <Modal isOpen={isModalOpen} onClose={closeModal}>
 <div class="modal-body">
         <img className='img-fluid common_modal_icon' src="/assests/images/thumbsUp.svg" alt="" srcset="" />
         <h4 className='mb-0 fw-bold'>Changes Saved</h4>
@@ -281,7 +282,7 @@ function MyVehicle() {
         <button type="button" class="btn btn-danger" onClick={()=> handleClickBack()}>Go, Back</button>
         </div>
       </div>
-</Modal>
+</Modal> */}
     </AdminLayout>
   )
 }

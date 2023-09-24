@@ -78,8 +78,7 @@ function MyVehicle() {
       .post("/v1/vehicle", formData)
       .then((res) => {
         setLoading(false)
-        router.push("/admin/all-vehicle");
-        // openModal();
+        openModal();
       })
       .catch((error) => {
         console.error("error", error);
@@ -440,7 +439,7 @@ function MyVehicle() {
           </div>
         </div>
       </div>
-      {/* <Modal isOpen={isModalOpen} onClose={closeModal}>
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
         <div class="modal-body">
           <img
             className="img-fluid common_modal_icon"
@@ -467,7 +466,7 @@ function MyVehicle() {
             </button>
           </div>
         </div>
-      </Modal> */}
+      </Modal>
     </AdminLayout>
   );
 }
