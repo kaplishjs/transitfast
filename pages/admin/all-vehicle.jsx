@@ -78,7 +78,7 @@ function AllVehicle() {
                     <td>{car?.price}</td>
                     <td className="tableButton">
                       <Link
-                        className="btn btn-success subscribeBtn"
+                        className="btn btn-primary btn-danger subscribeBtn"
                         href={`/admin/my-vehicle/${car._id}`}
                       >
                         View
