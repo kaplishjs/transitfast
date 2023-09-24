@@ -43,7 +43,7 @@ function SignIn(props) {
     <div className="auth_container_c sign_in">
       <div className="auth_form col-lg-5">
         <div className="signInTopNav">
-          <Link href="/signup" type="button" class="btn">
+          <Link href="/" type="button" class="btn">
             <i class="fas fa-chevron-left"></i>{" "}
             <span className="TextHide">Go Sign-up</span>{" "}
           </Link>
