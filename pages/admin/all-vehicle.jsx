@@ -52,7 +52,7 @@ function AllVehicle() {
             <h1>Car Listings</h1>
             <Link
                 href='create-vehicle'
-                className="btn btn-primary createVehicleBtn"
+                className="btn btn-primary createVehicleBtn  btn-danger"
               >
                 Create Vehicle
               </Link>

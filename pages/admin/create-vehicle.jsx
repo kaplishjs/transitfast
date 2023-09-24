@@ -163,7 +163,7 @@ function MyVehicle() {
           </a>
           <div className="row">
             <div className="col-md-7">
-              <div className="search_header_card mb-3">
+              <div className="search_header_card buttonFixLeft mb-3">
                 <div class="input-group">
                   {/* <div class="input-group-text">
                         <i class="fas fa-search"></i>
@@ -185,27 +185,7 @@ function MyVehicle() {
                 </button>
               </div>
               <div className="row">
-                <div className="col-md-12 mb-3">
-                  <input
-                    className="form-control"
-                    type="text"
-                    placeholder="Title"
-                    onChange={(e) => handleChange(e)}
-                    name="title"
-                    id=""
-                  />
-                </div>
-                <div className="col-md-12 mb-3">
-                  <textarea
-                    className="form-control"
-                    name="description"
-                    placeholder="Car Description"
-                    onChange={(e) => handleChange(e)}
-                    id=""
-                    cols="30"
-                    rows="5"
-                  ></textarea>
-                </div>
+                
                 <div className="col-md-6 mb-3">
                   <input
                     className="form-control"
@@ -221,45 +201,11 @@ function MyVehicle() {
                   <input
                     className="form-control"
                     type="text"
-                    value={carDetails.year}
-                    placeholder="Year"
-                    name="year"
-                    id=""
-                    disabled
-                  />
-
-                </div>
-                <div className="col-md-6 mb-3">
-                  <input
-                    className="form-control"
-                    type="text"
                     value={carDetails.model}
                     placeholder="Model"
                     name="model"
                     id=""
                     disabled
-                  />
-                </div>
-                <div className="col-md-6 mb-3">
-                  <input
-                    className="form-control"
-                    type="text"
-                    value={carDetails.variantType}
-                    placeholder="Variant Type"
-                    name="variantType"
-                    onChange={(e) => handleChange(e)}
-                    id=""
-                  />
-                </div>
-                <div className="col-md-6 mb-3">
-                  <input
-                    className="form-control"
-                    type="number"
-                    value={carDetails.mileage}
-                    placeholder="Mileage"
-                    name="mileage"
-                    id=""
-                    onChange={(e) => handleChange(e)}
                   />
                 </div>
                 <div className="col-md-6 mb-3">
@@ -284,7 +230,6 @@ function MyVehicle() {
                     disabled
                   />
                 </div>
-
                 <div className="col-md-6 mb-3">
                   <input
                     className="form-control"
@@ -296,7 +241,7 @@ function MyVehicle() {
                     disabled
                   />
                 </div>
-
+                
                 <div className="col-md-6 mb-3">
                   <input
                     className="form-control"
@@ -321,32 +266,71 @@ function MyVehicle() {
                   />
 
                 </div>
-              </div>
-              <div class="form-check form-check-inline">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  id="inlineCheckbox1"
-                  value="option1"
-                />
-                <label class="form-check-label" for="inlineCheckbox1">
-                  Allow offers
-                </label>
-              </div>
+                <div className="col-md-6 mb-3">
+                  <input
+                    className="form-control"
+                    type="text"
+                    value={carDetails.year}
+                    placeholder="Year"
+                    name="year"
+                    id=""
+                    disabled
+                  />
 
-              <div className="d-flex gap-3 mt-4">
-                <button
-                  className="btn btn-outline-danger"
-                  onClick={() => router.push("/admin/all-vehicle")}
-                >
-                  Go Back
-                </button>
-                <button className="btn btn-danger" onClick={handleCreateDeal}>
-                  Update Deal
-                </button>
+                </div>
+                
+                <div className="col-md-6 mb-3">
+                  <input
+                    className="form-control"
+                    type="text"
+                    value={carDetails.variantType}
+                    placeholder="Variant Type"
+                    name="variantType"
+                    onChange={(e) => handleChange(e)}
+                    id=""
+                  />
+                </div>
+                <div className="col-md-6 mb-3">
+                  <input
+                    className="form-control"
+                    type="number"
+                    value={carDetails.mileage}
+                    placeholder="Mileage"
+                    name="mileage"
+                    id=""
+                    onChange={(e) => handleChange(e)}
+                  />
+                </div>
+                
+               
+
+               
+
+
+                
+                <div className="col-md-12 mb-3">
+                  <input
+                    className="form-control"
+                    type="text"
+                    placeholder="Title"
+                    onChange={(e) => handleChange(e)}
+                    name="title"
+                    id=""
+                  />
+                </div>
+                <div className="col-md-12 mb-3">
+                  <textarea
+                    className="form-control"
+                    name="description"
+                    placeholder="Car Description"
+                    onChange={(e) => handleChange(e)}
+                    id=""
+                    cols="30"
+                    rows="5"
+                  ></textarea>
+                </div>
               </div>
-            </div>
-            <div className="col-md-5 section_padding">
+              <div className="col-md-12 section_padding1">
               <div className="drop_upload_main">
                 <label className="drop_upload_itm" htmlFor="drop_upload">
                   <input
@@ -390,6 +374,74 @@ function MyVehicle() {
                 ))}
               </div>
             </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="inlineCheckbox1"
+                  value="option1"
+                />
+                <label class="form-check-label" for="inlineCheckbox1">
+                  Allow offers
+                </label>
+              </div>
+
+              <div className="d-flex gap-3 mt-4">
+                <button
+                  className="btn btn-outline-danger"
+                  onClick={() => router.push("/admin/all-vehicle")}
+                >
+                  Go Back
+                </button>
+                <button className="btn btn-danger" onClick={handleCreateDeal}>
+                  Update Deal
+                </button>
+              </div>
+            </div>
+            {/* <div className="col-md-5 section_padding">
+              <div className="drop_upload_main">
+                <label className="drop_upload_itm" htmlFor="drop_upload">
+                  <input
+                    type="file"
+                    className="d-none"
+                    name=""
+                    id="drop_upload"
+                    accept="image/*"
+                    onChange={handleUploadImage}
+                    multiple
+                  />
+                  <img src="/assests/images/gallary.svg" alt="" srcset="" />
+                  <p className="mb-0">
+                    Drop your images here, or select{" "}
+                    <span className="fc_primary fw-semibold">
+                      click to browse
+                    </span>
+                  </p>
+                </label>
+              </div>
+              <div className="uploaded_img">
+                {carDetails?.vehicleImage?.map((imageItem) => (
+                  <div className="">
+                    {console.log(
+                      "imageItem",
+                      imageItem && imageItem?.name,
+                      imageItem
+                    )}
+                    <img
+                      src={
+                        imageItem && imageItem?.name
+                          ? window.URL.createObjectURL(
+                              new Blob([imageItem], { type: "image/*" })
+                            )
+                          : `https://www.transitfastautos.com/api/${imageItem}`
+                      }
+                      width={110}
+                      height={110}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div> */}
           </div>
         </div>
       </div>

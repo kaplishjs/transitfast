@@ -39,21 +39,21 @@ function MyAccount() {
     {
       name: "firstName",
       placeholder: "First Name",
-      classname: "mb-3 col-md-4",
+      classname: "mb-3 col-md-6",
     },
-    { name: "lastName", placeholder: "Last Name", classname: "mb-3 col-md-4" },
-    { name: "jobTitle", placeholder: "Job title", classname: "mb-3 col-md-4" },
+    { name: "lastName", placeholder: "Last Name", classname: "mb-3 col-md-6" },
+    { name: "jobTitle", placeholder: "Job title", classname: "mb-3 col-md-6" },
     {
       name: "phoneNo",
       placeholder: "Phone Number",
-      classname: "mb-3 col-md-4",
+      classname: "mb-3 col-md-6",
     },
-    { name: "email", placeholder: "Email address", classname: "mb-3 col-md-4" },
-    { name: "website", placeholder: "website", classname: "mb-3 col-md-4" },
+    { name: "email", placeholder: "Email address", classname: "mb-3 col-md-6" },
+    { name: "website", placeholder: "website", classname: "mb-3 col-md-6" },
     {
       name: "companyRegistration",
       placeholder: "Company Registration",
-      classname: "mb-3 col-md-4",
+      classname: "mb-3 col-md-6",
     },
     { name: "address_1", placeholder: "Address 1", classname: "mb-3 col-md-6" },
     { name: "address_2", placeholder: "Address 2", classname: "mb-3 col-md-6" },
@@ -62,7 +62,7 @@ function MyAccount() {
       placeholder: "City / Town",
       classname: "mb-3 col-md-6",
     },
-    { name: "post_code", placeholder: "Postcode", classname: "mb-3 col-md-6" },
+    { name: "post_code", placeholder: "Postcode", classname: "mb-3 col-md-3" },
   ];
 
   const handleOnchange = (e) => {
@@ -94,7 +94,7 @@ function MyAccount() {
      { isLoading&&<Loader />}
       <div className="card ">
         <div className="card-body">
-          <div className="circle-container">
+          <div className="circle-container imageSpaceBt">
             <div
               className="circle"
               onClick={handleClick}
@@ -118,7 +118,7 @@ function MyAccount() {
           </div>
           {/* <img src="/assests/dummy_images/upload_img.png" alt="" srcset="" /> */}
 
-          <div className="row mt-4">
+          <div className="row mt-6">
             {inputFields.map((el, index) => (
               <div key={index} className={el.classname}>
                 <input

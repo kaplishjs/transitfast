@@ -88,7 +88,7 @@ function MyVehicle() {
           <div className="row">
                 <div className="col-lg-6 col-sm-12">
                       <section className="d-flex gap-3">
-                        <div style={{ width: "290px", height: "290px", position: "relative"}}>
+                        <div style={{ width: "290px", height: "290px", position: "relative", backgroundImage: "url(" + `https://www.transitfastautos.com/api/${activeImage}` + ")"}} >
                         <Image src={`https://www.transitfastautos.com/api/${activeImage}`} layout="fill" alt="" className="" srcset="" />
 
                         </div>
