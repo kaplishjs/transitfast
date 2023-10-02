@@ -728,3 +728,28 @@ table.dashboardTable {
 
   .form-control:disabled {    background-color: #f6f6f6;}
   .imageSpaceBt {margin-bottom: 15px;}
+
+  .searchBoxOuter {border: 1px solid #dbdbdb;}
+  .searchBoxOuter input {border: 0;}
+
+  @media (max-width: 767px) {
+  .feature_description , .contact_us_desc   {
+    padding: 0 10px;
+  }
+  .product_itm_wrapper   {padding: 0 0 15px;}
+  .hero_description {    margin-bottom: 15px;}
+  .alert_detail_wrapper  {padding-left: 10px;}
+  .searcg_filter_wrapper .card-body {    padding-top: 0;}
+  .welcome_mail_inner_wrapper  .btn.btn-danger{ min-width: 100px;}
+  .feature_description.feature_description.section_padding  {margin-top: 15px;}
+  .contact_us_desc.contact_us_desc.section_padding  {margin-top: 15px;}
+  .contact_us_desc  #description {height: 150px;}
+  .subscribeBtn.btn {    min-width: 70px;}
+  .dashboard_card .search_header_card {display: block;}
+  .searchBoxOuter {margin-bottom: 15px;}
+  .search_header_card {text-align: center;}
+  .myVichiesSlider .card-body {padding-left: 0; padding-right: 0;}
+  .myVichiesSlider .my_vehicle_desc  {margin-top: 15px; padding-left: 0;}
+  .myVichiesSlider .container .col-md-6 {padding-left: 0; padding-right: 0;}
+
+}

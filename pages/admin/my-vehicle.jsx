@@ -97,7 +97,7 @@ function MyVehicle() {
          <div className="card dashboard_card ">
     <div className="card-body">
         <div className="search_header_card">
-        <div class="input-group">
+        <div class="input-group searchBoxOuter">
             <div class="input-group-text">
                <i class="fas fa-search"></i>
             </div>
@@ -109,7 +109,7 @@ function MyVehicle() {
     </div>
   </div>
 
-  <div className="card dashboard_card ">
+  <div className="card dashboard_card myVichiesSlider">
     <div className="card-body">
         <div className="container">
           <div className="row">
