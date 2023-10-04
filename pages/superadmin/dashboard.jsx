@@ -73,7 +73,6 @@ export default function dashboard() {
 							<table className="dashboardTable">
 								<thead>
 									<tr>
-										<th>Car Name</th>
 										<th>Seller Name</th>
 										<th>Car Model</th>
 										<th>Status</th>
@@ -84,7 +83,6 @@ export default function dashboard() {
 								<tbody>
 									{cars?.map((car) => (
 										<tr key={car?.id}>
-											<td>{car?.carName}</td>
 											<td>{car?.sellerName}</td>
 											<td>{car?.carModel}</td>
 											<td>{car?.status}</td>
