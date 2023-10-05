@@ -94,7 +94,7 @@ function Signup(props) {
           const payload = {
             firstName,
             lastName,
-            fullName: firstName+lastName,
+            fullName: firstName+" "+lastName,
             jobTitle,
             dealershipName,
             phoneNo: phoneNumber,
