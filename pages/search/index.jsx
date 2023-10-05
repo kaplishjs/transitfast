@@ -80,7 +80,7 @@ function index() {
   
   {/* alert section */}
 
-  <section className="alert_detail_wrapper section_margin">
+  <section className="alert_detail_wrapper section_margin alertRedContent">
     <div className="container">
               <div className="card bg-danger">
                   <div className="card-body">

@@ -21,7 +21,7 @@ function index() {
     <Layout>
   <section className="welcome_mail_wrapper text-center bg_felid_color d-flex">
     <div className="container">
-        <div className="col-lg-7 mx-auto welcome_mail_inner_wrapper section_margin">
+        <div className="col-lg-7 mx-auto welcome_mail_inner_wrapper section_margin splWelcomeSection">
         <img src="assests/images/email_icon.svg" alt="" className="welcome_mail_img" />
         <h2>Welcome to <span className="fc_primary2">Transit</span><span className="fc_primary">Fast</span> Sales</h2>
         <p>We have listed our hot new deals which can change daily.
