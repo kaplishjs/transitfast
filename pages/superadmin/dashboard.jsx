@@ -83,12 +83,12 @@ console.log("ENTER IN USE EFFECT")
                    </div>
 
 
-							<h1>Car Listings</h1>
+							<h1>Seller Listings</h1>
 							<table className="dashboardTable">
 								<thead>
 									<tr>
 										<th>Seller Name</th>
-										<th>Car Model</th>
+										<th>Seller Email</th>
 										<th>Status</th>
 										<th>Actions</th>
 									</tr>
