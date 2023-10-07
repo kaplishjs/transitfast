@@ -31,7 +31,7 @@ function SignIn(props) {
         typeof window !== "undefined" &&
           localStorage.setItem("refreshToken", res.data.meta.refreshToken);
         typeof window !== "undefined" &&
-          localStorage.setItem("status", "superAdmin");
+          localStorage.setItem("isLoggedIn", "SUPER_ADMIN");
           localStorage.setItem('user', JSON.stringify( res.data.data));
         router.push("/superadmin/dashboard");
         } else{
@@ -40,7 +40,7 @@ function SignIn(props) {
         typeof window !== "undefined" &&
           localStorage.setItem("refreshToken", res.data.meta.refreshToken);
         typeof window !== "undefined" &&
-          localStorage.setItem("isLoggedIn", true);
+          localStorage.setItem("isLoggedIn", "ADMIN");
           localStorage.setItem('user', JSON.stringify( res.data.data));
         router.push("/admin/all-vehicle");
         }

@@ -12,15 +12,15 @@ const withAuth = Component => {
       // isLoggedIn  = true;
 
     // If user is not logged in, return login component
-    if (!getAuth) {
+    if (getAuth == "ADMIN") {
       return (
-        <PageNotFound />
+        <Component {...props} />
       );
     }
 
     // If user is logged in, return original component
     return (
-      <Component {...props} />
+      <PageNotFound />
     );
   };
 

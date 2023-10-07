@@ -3,16 +3,24 @@ import Layout from "../../components/Layout";
 import Notification from "../../components/common/AlertNotification";
 import { transitApi } from "../../utils/AxiosInstance";
 import Loader from "../../components/Loader";
+import { useAuth } from "../../context/ContextAuth";
+import { useRouter } from "next/router";
 // import  "../../styles/pages/superAdmin.scss";
 // superAdmin from
 export default function dashboard() {
     const [showNotification, setShowNotification] = React.useState(false);
     const [isLoading, setLoading] = React.useState(false);
 	const [ sellerList, setSellerList] = React.useState([])
-
+	const router = useRouter();
+	const {getAuth} =useAuth()
 	useEffect(()=>{
 console.log("ENTER IN USE EFFECT")
-		getAllAdmins()
+if(getAuth=="SUPER_ADMIN"){
+
+	getAllAdmins()
+} else{
+	router.push("/")
+}
 	}, [])
 
 	const getAllAdmins = () => {
