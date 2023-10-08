@@ -10,6 +10,7 @@ function Layout({children}) {
   console.log(router.asPath)
   const isLoggedIn = typeof window !== 'undefined' && localStorage.getItem("isLoggedIn")
   console.log(isLoggedIn)
+
   return <div>
      <header className="main_header">
         <div className="header_strip">
@@ -74,9 +75,22 @@ function Layout({children}) {
               </ul>
               <form className="d-flex ms-auto buttonGap" role="search">
                 {/* <button className="btn btn-danger" type="submit"> */}
-                <Link className="btn btn-danger" href={isLoggedIn?'/admin/my-account':'/signup'}>{isLoggedIn?"My Account":"Sign Up"}</Link>
                 {
-                  !isLoggedIn &&                 <Link className="btn btn-danger" href={isLoggedIn?'/admin/my-account':'/signIn'}>{"Sign In"}</Link>
+                  isLoggedIn == "ADMIN" ?
+                  <Link className="btn btn-danger" href={'/admin/my-account'}>My Account</Link>
+                  : isLoggedIn == "SUPER_ADMIN" ?
+                  <>
+                  <Link className="btn btn-danger" href={'/superadmin/dashboard'}>My Account</Link>
+                  <button className="btn btn-danger" onClick={()=> {
+                      typeof window !== "undefined" && localStorage.clear("")
+                      router.push('/')
+                    }}>Logout</button>
+                  </>
+                  :
+                  <>
+                  <Link className="btn btn-danger" href={'/signup'}>Sign Up</Link>
+                  <Link className="btn btn-danger" href={'/signIn'}>Sign In</Link>
+                  </>
                 }
 
                 {/* </button> */}

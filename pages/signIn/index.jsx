@@ -24,14 +24,27 @@ function SignIn(props) {
       .post("/v1/admin/login", signInInput)
       .then((res) => {
         console.log("res", res);
-        typeof window !== "undefined" &&
+        if(res.data.data.role == "SUPER-ADMIN"){
+          console.log("SUPER ADMIN")
+          typeof window !== "undefined" &&
           localStorage.setItem("accessToken", res.data.meta.accessToken);
         typeof window !== "undefined" &&
           localStorage.setItem("refreshToken", res.data.meta.refreshToken);
         typeof window !== "undefined" &&
-          localStorage.setItem("isLoggedIn", true);
+          localStorage.setItem("isLoggedIn", "SUPER_ADMIN");
+          localStorage.setItem('user', JSON.stringify( res.data.data));
+        router.push("/superadmin/dashboard");
+        } else{
+          typeof window !== "undefined" &&
+          localStorage.setItem("accessToken", res.data.meta.accessToken);
+        typeof window !== "undefined" &&
+          localStorage.setItem("refreshToken", res.data.meta.refreshToken);
+        typeof window !== "undefined" &&
+          localStorage.setItem("isLoggedIn", "ADMIN");
           localStorage.setItem('user', JSON.stringify( res.data.data));
         router.push("/admin/all-vehicle");
+        }
+      
       })
       .catch((error) => {
         setErrMsg(error.response.data.message);
