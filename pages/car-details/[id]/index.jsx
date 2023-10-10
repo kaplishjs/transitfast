@@ -69,10 +69,10 @@ function index() {
 
   return (
     <Layout>
-      <section className="car_detail_main_wrapper">
+      <section className="car_detail_main_wrapper carSliderPrevSecMainCont">
               <div className="container">
                 <div className="row">
-                      <div className="col-md-6 car_detail_preview">
+                      <div className="col-md-6 car_detail_preview  carSliderPrevSections">
                      
                       <div className="car_detail_img_wrapper">
                         <img src={activeImage} alt="" className="img-fluid w-100" srcset="" />
@@ -115,7 +115,7 @@ function index() {
                       </div>
                       </div> 
                       </div>
-                      <div className="car_detail_desc section_padding">
+                      <div className="col-md-6 car_detail_desc section_padding cardDetailsSec">
                       <h5 className="small_title">Fuel Type: Diesel</h5>
                       <h2 className="heading_m mb-4">Citroen Berlingo Van M BlueHDi 100 6-speed manual 650 Enterprise Edition</h2>
                       <div className="d-flex gap-2 flex-wrap mb-4">
@@ -165,7 +165,7 @@ function index() {
       <section className="contact_us_wrapper section_margin">
         <div className="container">
           <div className="row">
-            <div className="col-md-6 contact_us_desc section_padding_right">
+            <div className="col-md-6 contact_us_desc section_padding_right contactHelpForm">
               <h5 className="small_title">Contact Us</h5>
               <h2 className="heding_l large_title">
                 How Can our team help you?

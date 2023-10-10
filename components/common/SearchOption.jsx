@@ -28,7 +28,7 @@ const SearchOption = () =>{
                     <option value="3">Three</option>
                   </select>
                   
-                  <div className="d-flex gap-3">
+                  <div className="d-flex gap-3 searchBottomActions">
                   <Link href = "/filter-search" className="btn btn-danger">Search 400 cars</Link>
                   <button className="btn btn-link fc_primary">More Options</button>
                   </div>

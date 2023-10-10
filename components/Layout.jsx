@@ -21,7 +21,7 @@ function Layout({children}) {
             </a>
           </span>
         </div>
-        <nav className="navbar navbar-expand-lg ">
+        <nav className="navbar navbar-expand-lg responsiveFixed">
           <div className="container">
             <a className="navbar-brand" href="#">
             <Image 

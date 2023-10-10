@@ -305,7 +305,7 @@ function MyVehicle() {
                 <button className="btn btn-danger">Update Deal</button>
               </div>
             </div>
-            <div className="col-md-5 section_padding">
+            <div className="col-md-5 section_padding editDropUploadContainer">
               <div className="drop_upload_main">
                 <label className="drop_upload_itm" htmlFor="drop_upload">
                   <input
