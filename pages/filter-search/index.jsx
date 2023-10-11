@@ -4,7 +4,7 @@ import Layout from '../../components/Layout'
 function index() {
   return (
     <Layout>
-        <div className="container_with_filter">
+        <div className="container_with_filter filterContainer">
 
         <div className="filter_search_wrapper card">
             <div className="card-body">
