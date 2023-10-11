@@ -81,7 +81,9 @@ function AllVehicle() {
                         className="btn btn-primary btn-danger subscribeBtn"
                         href={`/admin/my-vehicle/${car._id}`}
                       >
-                        View
+                        <span className="viewTextSubBtn">View</span>
+                        <span className="viewIconSubBtn"><i class="fas fa-eye"></i></span>
+                        
                       </Link>
                     </td>
                     {/* <td className="tableImage">

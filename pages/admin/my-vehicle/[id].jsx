@@ -25,7 +25,7 @@ function MyVehicle() {
 
   const [carDetails, seCarDetails] = useState();
   const [activeImage, setActiveImage] = React.useState(null);
-
+  const [backgroundImage, setBackgroundImage] = useState(null);
   function getVehicle(){
     transitApi.get(`v1/vehicle/${routeId}`)
     .then((res)=>{
@@ -65,6 +65,18 @@ function MyVehicle() {
     });
   };
 
+ 
+  // const activeImage = 'your_image_path.jpg';
+  const handleImageLoad = () => {
+    setBackgroundImage(`url(https://www.transitfastautos.com/api/${activeImage})`);
+  };
+
+//   useEffect(() => {
+//     const img = new Image()
+//     img.src = src
+//     img.onload = () => setSource(src)
+// }, [src])
+
   return (
     <AdminLayout>
          <div className="card dashboard_card ">
@@ -82,14 +94,23 @@ function MyVehicle() {
     </div>
   </div>
 
-  <div className="card dashboard_card ">
+  <div className="card dashboard_card myVehicleCards">
     <div className="card-body">
         <div className="container">
           <div className="row">
                 <div className="col-lg-6 col-sm-12">
                       <section className="d-flex gap-3">
-                        <div style={{ width: "290px", height: "290px", position: "relative", backgroundImage: "url(" + `https://www.transitfastautos.com/api/${activeImage}` + ")"}} >
-                        <Image src={`https://www.transitfastautos.com/api/${activeImage}`} layout="fill" alt="" className="" srcset="" />
+                        {/* <div style={{ width: "290px", height: "290px", position: "relative", backgroundImage: "url(" + `https://www.transitfastautos.com/
+                        api/${activeImage}` + ")"}} > */}
+                         <div data={backgroundImage} style={{
+        // background: backgroundImage,
+        width: "290px", height: "290px", position: "relative",
+        backgroundImage: 'url('+backgroundImage+')',
+        backgroundSize: 'cover', 
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center center',
+      }} >
+                        <Image src={`https://www.transitfastautos.com/api/${activeImage}`} layout="fill" alt="" className="" srcset=""  onLoad={(e) => handleImageLoad()} />
 
                         </div>
                         <div className='d-flex flex-column align-items-center'>
@@ -132,7 +153,7 @@ function MyVehicle() {
        
       </section>
                 </div>
-                <div className="col-lg-6 col-sm-12 my_vehicle_desc section_padding">
+                <div className="col-lg-6 col-sm-12 my_vehicle_desc section_padding noPaddingSmallerDevice">
                 <div className="my_vehicle_desc_header">
                   <h2 className="heding_l mb-0">£{carDetails?.price}</h2>
                   <div className="my_vehicle_desc_header_cta">

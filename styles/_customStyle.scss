@@ -221,9 +221,11 @@
   width: 90%;
   margin: auto;
 }
+
 .swiper-button-lock {
   display: inline-block !important;
 }
+
 .swiper-button svg {
   width: 1.5rem;
   height: 1.5rem;
@@ -413,43 +415,53 @@
 .section_margin {
   margin: 2.66rem 0;
 }
+
 .ViewSplOfferBtns {
   display: flex;
   justify-content: space-between;
 }
+
 .FAQPage ul {
   padding: 0;
   margin: 0;
   list-style: none;
 }
+
 .FAQPage ul .faqHeading {
   padding: 0;
   margin: 0 0 5px;
   font-weight: bold;
 }
+
 .FAQPage ul p {
   padding-left: 15px;
 }
+
 .FAQPage ul li {
   margin: 0 0 15px;
 }
+
 .FAQPage ul .lastText {
   padding-left: 0;
 }
+
 .HomeSecondBannerText {
   margin: 0;
   padding: 0;
 }
+
 .HomeSecondBannerText li {
   list-style: disc;
   list-style-position: inside;
   padding-left: 10px;
 }
+
 .HomeSecondBannerText li p {
   margin: 0;
   padding: 0;
   display: inline-block;
 }
+
 .HomeSecondBannerText li p.lastBig {
   position: relative;
   top: -23px;
@@ -480,6 +492,7 @@
   color: #666;
   margin-top: 10px;
 }
+
 .section_margin {
   margin: 2.66rem 0;
 }
@@ -596,6 +609,7 @@ table.dashboardTable img {
 .alert.hide {
   display: none;
 }
+
 .buttonGap a {
   margin: 0 10px;
 }
@@ -625,6 +639,7 @@ table.dashboardTable img {
   height: 100%;
   width: 100%;
   pointer-events: unset;
+
   .loader {
     position: absolute;
     top: 50%;
@@ -661,6 +676,7 @@ table.dashboardTable img {
   0% {
     transform: translateY(-1%);
   }
+
   100% {
     transform: translateY(3%);
   }
@@ -691,6 +707,7 @@ table.dashboardTable img {
     stroke-dashoffset: -22;
   }
 }
+
 /*************** END LOADER *******************/
 
 table.dashboardTable {
@@ -700,30 +717,33 @@ table.dashboardTable {
   text-align: left;
   border-collapse: collapse;
 }
+
 table.dashboardTable td,
 table.dashboardTable th {
   border: 1px solid #aaaaaa;
   padding: 8px 10px;
 }
+
 table.dashboardTable tbody td {
   font-size: 13px;
 }
+
 table.dashboardTable tr:nth-child(even) {
   background: #f5eced;
 }
+
 table.dashboardTable thead,
 table.dashboardTable thead th {
   background: #e21c21;
   background: -moz-linear-gradient(top, #e95558 0%, #e53237 66%, #e21c21 100%);
-  background: -webkit-linear-gradient(
-    top,
-    #e95558 0%,
-    #e53237 66%,
-    #e21c21 100%
-  );
+  background: -webkit-linear-gradient(top,
+      #e95558 0%,
+      #e53237 66%,
+      #e21c21 100%);
   background: linear-gradient(to bottom, #e95558 0%, #e53237 66%, #e21c21 100%);
   border-bottom: 2px solid #e21c21;
 }
+
 table.dashboardTable thead th {
   font-size: 15px;
   font-weight: bold;
@@ -731,6 +751,7 @@ table.dashboardTable thead th {
   text-align: center;
   border-left: 2px solid #e21c21;
 }
+
 table.dashboardTable thead th:first-child {
   border-left: none;
 }
@@ -741,21 +762,22 @@ table.dashboardTable tfoot {
   color: #ffffff;
   background: #d0e4f5;
   background: -moz-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #d0e4f5 100%);
-  background: -webkit-linear-gradient(
-    top,
-    #dcebf7 0%,
-    #d4e6f6 66%,
-    #d0e4f5 100%
-  );
+  background: -webkit-linear-gradient(top,
+      #dcebf7 0%,
+      #d4e6f6 66%,
+      #d0e4f5 100%);
   background: linear-gradient(to bottom, #dcebf7 0%, #d4e6f6 66%, #d0e4f5 100%);
   border-top: 2px solid #444444;
 }
+
 table.dashboardTable tfoot td {
   font-size: 14px;
 }
+
 table.dashboardTable tfoot .links {
   text-align: right;
 }
+
 table.dashboardTable tfoot .links a {
   display: inline-block;
   background: #e21c21;
@@ -763,6 +785,7 @@ table.dashboardTable tfoot .links a {
   padding: 2px 8px;
   border-radius: 5px;
 }
+
 .buttonFixLeft {
   justify-content: flex-start;
 }
@@ -770,6 +793,7 @@ table.dashboardTable tfoot .links a {
 .form-control:disabled {
   background-color: #f6f6f6;
 }
+
 .imageSpaceBt {
   margin-bottom: 15px;
 }
@@ -777,70 +801,103 @@ table.dashboardTable tfoot .links a {
 .searchBoxOuter {
   border: 1px solid #dbdbdb;
 }
+
 .searchBoxOuter input {
   border: 0;
 }
 
+.viewTextSubBtn {
+  display: inline-block;
+}
+
+.viewIconSubBtn {
+  display: none;
+}
+
+.search_header_card .input-group {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
 @media (max-width: 767px) {
+
   .feature_description,
   .contact_us_desc {
     padding: 0 15px !important;
   }
+
   .product_itm_wrapper {
     padding: 0 0 15px;
   }
+
   .hero_description {
     margin-bottom: 15px;
   }
+
   .alert_detail_wrapper {
     padding-left: 10px;
   }
+
   .searcg_filter_wrapper .card-body {
     padding-top: 0;
   }
+
   .welcome_mail_inner_wrapper .btn.btn-danger {
     min-width: 100px;
   }
+
   .feature_description.feature_description.section_padding {
     margin-top: 15px !important;
   }
+
   .contact_us_desc.contact_us_desc.section_padding {
     margin-top: 15px;
   }
+
   .contact_us_desc #description {
     height: 150px;
   }
+
   .subscribeBtn.btn {
     min-width: 70px;
   }
+
   .dashboard_card .search_header_card {
     display: block;
   }
+
   .searchBoxOuter {
     margin-bottom: 15px;
   }
+
   .search_header_card {
     text-align: center;
   }
+
   .myVichiesSlider .card-body {
     padding-left: 0;
     padding-right: 0;
   }
+
   .myVichiesSlider .my_vehicle_desc {
     margin-top: 15px;
     padding-left: 0;
   }
+
   .myVichiesSlider .container .col-md-6 {
     padding-left: 0;
     padding-right: 0;
   }
+
   .editDropUploadContainer {
     padding: 0;
     margin-top: 15px;
   }
+
   .search_header_card .input-group {
     margin-bottom: 15px;
   }
+
   .container,
   .container-fluid,
   .container-lg,
@@ -851,27 +908,140 @@ table.dashboardTable tfoot .links a {
     padding-left: 15px !important;
     padding-right: 15px !important;
   }
+
   .subscribeBtn.btn {
     min-width: 110px !important;
   }
+
   form.buttonGap {
     margin-top: 15px !important;
   }
+
   .searcg_filter_wrapper .form-control {
     max-width: 100% !important;
   }
+
   .searchBottomActions {
     width: 100%;
     justify-content: space-between;
     margin-top: 10px;
   }
-  .alertRedContent ul{ padding: 0;
+
+  .alertRedContent ul {
+    padding: 0;
   }
-  .splWelcomeSection {margin-top: 15px;}
-  .cardDetailsSec {padding: 0 15px; margin-top: 15px;}
-  .contactHelpForm {margin-bottom: 15px !important;}
-  .carSliderPrevSections { padding-left: 20px; padding-right: 20px;}
-  .carSliderPrevSecMainCont .image-swiper-button-next {right: 5px !important;}
-  .carSliderPrevSecMainCont .image-swiper-button-prev {left: 5px !important;}
-  .responsiveFixed {margin-bottom: 15px !important;}
+
+  .splWelcomeSection {
+    margin-top: 15px;
+  }
+
+  .cardDetailsSec {
+    padding: 0 15px;
+    margin-top: 15px;
+  }
+
+  .contactHelpForm {
+    margin-bottom: 15px !important;
+  }
+
+  .carSliderPrevSections {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .carSliderPrevSecMainCont .image-swiper-button-next {
+    right: 5px !important;
+  }
+
+  .carSliderPrevSecMainCont .image-swiper-button-prev {
+    left: 5px !important;
+  }
+
+  .responsiveFixed {
+    margin-bottom: 15px !important;
+  }
+
+  .circle-container.imageSpaceBt {
+    text-align: center;
+    justify-content: center;
+  }
+
+  table.dashboardTable {
+    table-layout: fixed;
+  }
+
+  .btn.subscribeBtn {
+    padding: 5px 10px;
+  }
+
+  .viewTextSubBtn {
+    display: none;
+  }
+
+  .viewIconSubBtn {
+    display: inline-block;
+  }
+
+  table.dashboardTable td,
+  table.dashboardTable th {
+    padding: 8px 6px;
+    font-size: 14px;
+  }
+
+  table.dashboardTable thead th {
+    font-size: 14px;
+  }
+
+  .noPaddingSmallerDevice {
+    padding: 0;
+  }
+
+  .myVehicleCards .card-body {
+    padding: 0;
+  }
+
+  .myVehicleCards .noPaddingSmallerDevice {
+    margin-top: 15px;
+  }
+
+  .myVehicleCards ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .imageItems {
+    text-align: center;
+  }
+
+  .imageItems img {
+    width: 100%;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+  }
+
+  .table-responsive .dashboardTable {
+    table-layout: inherit;
+  }
+
+  .dashboardTable {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .dashboardTable th,
+  .dashboardTable td {
+    text-align: left;
+    padding: 8px;
+  }
+
+  .tableButton button {
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+
+  .dashboardTable td:last-child {
+    white-space: nowrap;
+  }
 }

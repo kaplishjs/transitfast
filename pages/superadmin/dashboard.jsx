@@ -92,6 +92,7 @@ if(getAuth=="SUPER_ADMIN"){
 
 
 							<h1>Seller Listings</h1>
+							<div class="table-responsive">
 							<table className="dashboardTable">
 								<thead>
 									<tr>
@@ -125,6 +126,7 @@ if(getAuth=="SUPER_ADMIN"){
 									))}
 								</tbody>
 							</table>
+							</div>
 						</div>
 					</div>
 				</div>

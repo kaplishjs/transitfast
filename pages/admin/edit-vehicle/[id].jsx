@@ -244,7 +244,7 @@ function MyVehicle() {
 
                   </div>
             </div>
-            <div className="col-md-5 section_padding">
+            <div className="col-md-5 section_padding editDropUploadContainer">
                 <div className="drop_upload_main">
                       <label  className="drop_upload_itm" htmlFor="drop_upload">
                         <input type="file" className="d-none" name="" id="drop_upload" accept='image/*'    onChange={handleUploadImage} multiple/>
@@ -256,7 +256,7 @@ function MyVehicle() {
                 
                 <div className="uploaded_img">
                 { carDetails?.vehicleImage?.map((imageItem)=>(
-             <div className="">
+             <div className="imageItems">
                { console.log("imageItem", imageItem && imageItem?.name, imageItem)}
              <img 
          src={imageItem && imageItem?.name ? window.URL.createObjectURL(new Blob([imageItem], { type: 'image/*' })) : `https://www.transitfastautos.com/api/${imageItem}`}
