@@ -142,7 +142,7 @@ function Layout({children}) {
                 <h3>Contact Us</h3>
                 <div className="link_list">
                 <a href="">Call: 0333 577 0488</a>
-                <a href="">Email: info@transitfastsales.com</a>
+                <a href="">Email: info@transitfastautos.com</a>
                 <a href="">What’s App</a>
                 <a href="">Facebook</a>
                 <a href="">Instagram</a>
