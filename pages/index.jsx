@@ -14,15 +14,6 @@ import Notification from "../components/common/AlertNotification";
 
 export default function Signup() {
   const [carList, setCarList] = React.useState([
-    carData,
-    carData,
-    carData,
-    carData,
-    carData,
-    carData,
-    carData,
-    carData,
-    carData,
   ]);
   const [showNotification, setShowNotification] = React.useState(false);
 
@@ -32,10 +23,10 @@ export default function Signup() {
 
   React.useEffect(() => {
     transitApi
-      .get("/v1/vehicle")
+      .get("/v1/admin/all-vehicles-list")
       .then((res) => {
-        console.log(res);
-        // setCarList();
+        console.log("res", res.data.data);
+        setCarList(res.data.data);
       })
       .catch((error) => {
         console.log(error);
@@ -243,9 +234,9 @@ export default function Signup() {
                 throughout the UK; to not only suit the dealer but also achieve
                 the best deal for the customer.
               </p>
-              <Link href="/about-us" className="btn btn-danger">
+              {/* <Link href="/about-us" className="btn btn-danger">
                 About Us
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>

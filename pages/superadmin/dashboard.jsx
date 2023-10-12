@@ -110,12 +110,14 @@ if(getAuth=="SUPER_ADMIN"){
 											<td>{seller?.isApproved}</td>
 											<td  className="tableButton">
 												<button
+												disabled = {seller.isApproved == "APPROVED"?true:false}
 													className="btn btn-success subscribeBtn"
 													onClick={() => handleApproveReject(seller?._id, index, "APPROVED")}
 												>
 													Approve
 												</button>
 												<button
+												disabled = {seller.isApproved == "REJECT"?true:false}
 													className="btn btn-danger subscribeBtn"
 													onClick={() => handleApproveReject(seller?._id, index, "REJECT")}
 												>
