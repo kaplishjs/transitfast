@@ -93,7 +93,7 @@ if(getAuth=="SUPER_ADMIN"){
 
 							<h1>Seller Listings</h1>
 							<div class="table-responsive">
-							<table className="dashboardTable">
+							<table className="dashboardTable superAdminTableDashboard">
 								<thead>
 									<tr>
 										<th>Seller Name</th>
@@ -107,18 +107,18 @@ if(getAuth=="SUPER_ADMIN"){
 										<tr key={seller?._id}>
 											<td>{seller?.fullName}</td>
 											<td>{seller?.email}</td>
-											<td>{seller?.isApproved}</td>
+											<td className={'labelIs'+seller.isApproved.toLowerCase()}><span className="labelRejectApproved">{seller?.isApproved}</span></td>
 											<td  className="tableButton">
 												<button
 												disabled = {seller.isApproved == "APPROVED"?true:false}
-													className="btn btn-success subscribeBtn"
+													className="btn btn-success subscribeBtn approveLabelBtn"
 													onClick={() => handleApproveReject(seller?._id, index, "APPROVED")}
 												>
 													Approve
 												</button>
 												<button
 												disabled = {seller.isApproved == "REJECT"?true:false}
-													className="btn btn-danger subscribeBtn"
+													className="btn btn-danger subscribeBtn rejectLabelBtn"
 													onClick={() => handleApproveReject(seller?._id, index, "REJECT")}
 												>
 													Reject
