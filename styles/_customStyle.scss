@@ -822,7 +822,14 @@ table.dashboardTable tfoot .links a {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 5px;
 }
+a {text-decoration: none;}
+.aboutUsSectionTop .features_img {justify-content: center;
+  align-items: center;
+  display: flex;
+}
 
+
+.aboutUsSectionTop .section_padding {padding-left: 20px;}
 @media (max-width: 767px) {
   .feature_description,
   .contact_us_desc {
