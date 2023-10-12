@@ -136,7 +136,7 @@ export default function Signup() {
         </div>
       </section>
       {/* brand section */}
-      <section className="brand_wrapper section_margin cursor-pointer pe-auto">
+      <section className="brand_wrapper section_margin">
         {/* <div className="container">
           <img
             className="img-fluid"
@@ -201,11 +201,38 @@ export default function Signup() {
         </div> */}
         
       <Swiper
-        className="brand_wrapper section_margin container"
+        className="container brand_crousel"
         slidesPerView={8}
         spaceBetween={0}
         pagination={{
           clickable: true,
+        }}
+        breakpoints={{
+          323: {
+            width: 325,
+            slidesPerView: 2,
+
+
+          },
+          576: {
+            width: 576,
+            slidesPerView: 4,
+
+
+          },
+          // when window width is >= 640px
+          640: {
+            width: 640,
+            slidesPerView: 6,
+
+
+          },
+          // when window width is >= 768px
+          768: {
+            width: 768,
+            slidesPerView: 6,
+
+          },
         }}
         // modules={[Pagination]}
         // className="mySwiper"
