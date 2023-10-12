@@ -1070,4 +1070,13 @@ a {text-decoration: none;}
 .HomeSecondBannerText li p.lastBig {    position: static;}
 .HomeSecondBannerText {margin: 0 0 15px;}
 .HomePageData .hero_img  {display: flex; align-items: center;}
+.animateBlink {
+  animation: blinker 1.5s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
 // CheckMark.pmg
