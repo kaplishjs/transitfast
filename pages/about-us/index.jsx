@@ -7,7 +7,7 @@ function index() {
     <Layout>
       {/* feature setion */}
 
-      <section className="features_wrapper section_margin">
+      <section className="features_wrapper section_margin aboutUsSectionTop">
         <div className="container">
           <div className="row">
             <div className="col-md-6 features_img">
@@ -25,13 +25,13 @@ function index() {
                 <span className="fc_primary">Fast</span> Vehicle Solutions
               </h2>
               <p>
-                {" "}
+                
                  <Link target="_blank" href="https://www.transitfastltd.com/">
                 <span className="fc_primary fw-semibold">
-                   Transitfast Solutions Ltd {" "}
+                   Transitfast Solutions Ltd  
                 </span>
-                   </Link>
-                has been in the transport industry for several years now creating a successful Transport Company within the UK.  Being from the Transport industry we understand not only our customers’ needs but the needs of drivers and how important it is to have a well maintained up to date vehicle with the latest technology with the option to regularly upgrade.
+                   </Link> 
+                 &nbsp; has been in the transport industry for several years now creating a successful Transport Company within the UK.  Being from the Transport industry we understand not only our customers’ needs but the needs of drivers and how important it is to have a well maintained up to date vehicle with the latest technology with the option to regularly upgrade.
               </p>
               <p>
               This has allowed us to expand our successful transport business to not only providing transport but now supplying it not only to our ever-growing customer base but to the entire UK.  Whether you’re looking for a new or used vehicle we utilise our experience to bring together vehicle dealerships into one place to have the best available deals in one place.  Not only for our customers but also for the dealerships.
@@ -39,15 +39,15 @@ function index() {
               <p>
               Our objective is to find you a wide variety of affordable vehicles with the specifications you desire like low-rate finance options, poor credit history and Short-term lease with selected dealers.
               </p>
-              <h1>COST EFFECTIVE</h1>
+              <p><strong>COST EFFECTIVE</strong></p>
               <p>
               Transitfast will only bring together the most reliable dealers with the best prices to ensure you bet the best deal.
               </p>
-              <h1>OUR MISSION</h1>
+              <p><strong>COUR MISSION</strong></p>
               <p>
               Transitfast’s aim is to bring all the dealers in one place so you can see the best prices at a glance.
               </p>
-              <h1>INCOMING GUIDELINES</h1>
+              <p><strong>INCOMING GUIDELINES</strong></p>
               <p>
               By purchasing a newer vehicle this will eliminate the ever increasing Clean Air Zones helps you to fall in line with the incoming current guidelines
               </p>
@@ -57,7 +57,7 @@ function index() {
         </div>
       </section>
 
-      <section className="about_us_feature_wrapper section_margin">
+      <section className="about_us_feature_wrapper section_margin aboutUsSectionMiddle">
         <div className="container">
           <div className="row">
             <div className="col-md-4 about_us_feature_itm">
