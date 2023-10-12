@@ -107,17 +107,17 @@ if(getAuth=="SUPER_ADMIN"){
 										<tr key={seller?._id}>
 											<td>{seller?.fullName}</td>
 											<td>{seller?.email}</td>
-											<td>{seller?.isApproved? "Approved":"Pending"}</td>
+											<td>{seller?.isApproved}</td>
 											<td  className="tableButton">
 												<button
 													className="btn btn-success subscribeBtn"
-													onClick={() => handleApproveReject(seller?._id, index, true)}
+													onClick={() => handleApproveReject(seller?._id, index, "APPROVED")}
 												>
 													Approve
 												</button>
 												<button
 													className="btn btn-danger subscribeBtn"
-													onClick={() => handleApproveReject(seller?._id, index, false)}
+													onClick={() => handleApproveReject(seller?._id, index, "REJECT")}
 												>
 													Reject
 												</button>
