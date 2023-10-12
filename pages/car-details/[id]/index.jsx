@@ -1,5 +1,5 @@
 import { useFormik } from "formik";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Layout from "../../../components/Layout";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -10,19 +10,30 @@ import "swiper/css/navigation";
 
 // import required modules
 import { Pagination, Navigation } from "swiper/modules";
+import { useRouter } from "next/router";
+import { transitApi } from "../../../utils/AxiosInstance";
+import Image from "next/image";
 
 function index() {
-  const [activeImage, setActiveImage] = React.useState(
-    "../assests/dummy_images/preview.png"
-  );
+  const router = useRouter();
+  const { query : { id: routeId} } = router;
 
-  const data = [
-    "../assests/dummy_images/preview.png",
-    "../assests/images/logo.png",
-    "../assests/images/heroIMg.png",
-    "../assests/dummy_images/preview.png",
-    "../assests/dummy_images/preview.png",
-  ];
+  const [carDetails, seCarDetails] = useState();
+  const [activeImage, setActiveImage] = React.useState(null);
+  const [backgroundImage, setBackgroundImage] = useState(null);
+  useEffect(()=>{
+    if(routeId) getVehicle();
+  },[routeId]);
+
+  function getVehicle(){
+    transitApi.get(`v1/vehicle/${routeId}`)
+    .then((res)=>{
+      seCarDetails(res?.data?.data)
+      setActiveImage(res?.data?.data?.vehicle_image[0]);
+         console.log("carDetails", res)
+    })
+    .catch((err)=>console.log("ERR=>", err))
+  }
 
   const validate = (values) => {
     const errors = {};
@@ -75,7 +86,7 @@ function index() {
                       <div className="col-md-6 car_detail_preview  carSliderPrevSections">
                      
                       <div className="car_detail_img_wrapper">
-                        <img src={activeImage} alt="" className="img-fluid w-100" srcset="" />
+                        <img src={`https://www.transitfastautos.com/api/${activeImage}`} alt="" className="img-fluid w-100" srcset="" />
                       </div> 
                       <div class="swiper_wrap">
                       <div className="car_detail_slider_wrapper">
@@ -94,10 +105,10 @@ function index() {
                             className="mySwiper"
                           >
                             {
-                              data.map((item, index) => {
+                              carDetails?.vehicle_image?.map((item, index) => {
                                 return (
                                   <>
-                                    <SwiperSlide onClick={()=>handleClick(index)}><img src={item} alt="" className="img-fluid w-100" srcset="" /></SwiperSlide>
+                                    <SwiperSlide onClick={()=>handleClick(index)}><Image src={`https://www.transitfastautos.com/api/${item}`} width={130} height={130} alt="" srcset="" /></SwiperSlide>
                                   </>
                                 )
                               })
@@ -116,18 +127,21 @@ function index() {
                       </div> 
                       </div>
                       <div className="col-md-6 car_detail_desc section_padding cardDetailsSec">
-                      <h5 className="small_title">Fuel Type: Diesel</h5>
-                      <h2 className="heading_m mb-4">Citroen Berlingo Van M BlueHDi 100 6-speed manual 650 Enterprise Edition</h2>
+                      <h5 className="small_title">Fuel Type: {carDetails?.fuel} </h5>
+                      <h2 className="heading_m mb-4"> {carDetails?.title} </h2>
                       <div className="d-flex gap-2 flex-wrap mb-4">
-                      <button type="button" class="btn btn-outline-secondary rounded-pill desc_pill">make</button>
-                      <button type="button" class="btn btn-outline-secondary rounded-pill desc_pill">year</button>
-                      <button type="button" class="btn btn-outline-secondary rounded-pill desc_pill">mileage</button>
-                      <button type="button" class="btn btn-outline-secondary rounded-pill desc_pill">Engine size</button>
-                      <button type="button" class="btn btn-outline-secondary rounded-pill desc_pill">Color</button>
+                      <button type="button" class="btn btn-outline-secondary rounded-pill desc_pill"> {carDetails?.make}</button>
+                      <button type="button" class="btn btn-outline-secondary rounded-pill desc_pill"> {carDetails?.year}</button>
+                      <button type="button" class="btn btn-outline-secondary rounded-pill desc_pill"> {carDetails?.mileage}</button>
+                      <button type="button" class="btn btn-outline-secondary rounded-pill desc_pill"> {carDetails?.engine_size}</button>
+                      <button type="button" class="btn btn-outline-secondary rounded-pill desc_pill"> {carDetails?.color}</button>
                       </div>
 
+
+
                       <ul className="ps-3">
-                        <li> 180 Degree Opening Unglazed Asymmetric Rear Doors</li>
+                        {carDetails?.description}
+                        {/* <li> 180 Degree Opening Unglazed Asymmetric Rear Doors</li>
                         <li> 6 Floor Mounted Load Securing Rings</li>
                         <li> 6 Load Tie-Down Hooks in Cargo Area</li>
                         <li>Automatic lights</li>
@@ -140,10 +154,10 @@ function index() {
                         <li> Cruise Control with Programmable Speed Limiter</li>
                         <li>
                         Electric Front Windows with One Touch Operation
-                        </li>
+                        </li> */}
                       </ul>
                       <div className="d-flex align-items-end justify-content-end pricePound">
-                      <h5 className="mb-0 headieding_s fc_primary2 ">Price:  </h5> <h4 className="headieding_l mb-0"> &pound;6,500</h4>
+                      <h5 className="mb-0 headieding_s fc_primary2 ">Price:  </h5> <h4 className="headieding_l mb-0"> &pound;{carDetails?.price}</h4>
                       </div>
                       </div> 
 

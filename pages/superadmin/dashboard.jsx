@@ -75,9 +75,9 @@ if(getAuth=="SUPER_ADMIN"){
 					<div className="row">
 						<div className="col-md-12">
                    <div className="alertBox">
-                   <button onClick={handleShowNotification} className="btn btn-primary">
+                   {/* <button onClick={handleShowNotification} className="btn btn-primary">
 					Show Notification
-				</button>
+				</button> */}
 				{showNotification && (
                     <>
                     {/* <Notification className="notificationContainer alert-success" message="This is a notification message success." />

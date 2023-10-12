@@ -6,15 +6,17 @@ import { transitApi } from '../../utils/AxiosInstance';
 
 function index() {
 
-  const [carList, setCarList] = React.useState([carData,carData,carData,carData,carData,carData]);
-  React.useEffect(()=>{
-   transitApi.get('/v1/vehicle').
-    then((res) => {
-      console.log(res);
-      // setCarList();
-    }).catch((error)=>{
-      console.log(error);
-    })
+  const [carList, setCarList] = React.useState([]);
+  React.useEffect(() => {
+    transitApi
+      .get("/v1/admin/all-vehicles-list")
+      .then((res) => {
+        console.log("res", res.data.data);
+        setCarList(res.data.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
 
   return (
@@ -45,7 +47,7 @@ Have the latest offers straight to your email.</p>
     <div className="product_itm_wrapper bg_white ">
       <div className="container mb-5">
           {
-            carList.map((item, index) => {
+            carList.slice(0,6)?.map((item, index) => {
               return (
                 <>
                 <ProductCard item={item}  />
