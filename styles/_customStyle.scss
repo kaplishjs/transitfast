@@ -1064,3 +1064,19 @@ a {text-decoration: none;}
     width: 100%;
   }
 }
+
+.HomePageData  {background-color: #F5F5F5; padding: 40px 0;}
+.HomeSecondBannerText li {list-style: none; background-image: url(../public/assests/images/CheckMark.png); background-position: center left; background-size: 15px; background-repeat: no-repeat; padding-left: 30px;}
+.HomeSecondBannerText li p.lastBig {    position: static;}
+.HomeSecondBannerText {margin: 0 0 15px;}
+.HomePageData .hero_img  {display: flex; align-items: center;}
+.animateBlink {
+  animation: blinker 1.5s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+// CheckMark.pmg

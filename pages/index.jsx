@@ -325,7 +325,7 @@ export default function Signup() {
 
       <section className="product_main_wrapper">
         <div className="container text-center">
-          <h5 className="small_title">Weekly special offers</h5>
+          <h5 className="small_title animateBlink">Weekly special offers</h5>
           <h2 className="heding_l large_title">
             We have different categories <br /> of vehicles
           </h2>
