@@ -6,6 +6,12 @@ import Link from "next/link";
 import SearchOption from "../components/common/SearchOption";
 import ProductCard from "../components/common/ProductCard";
 import { useFormik } from "formik";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
 import React from "react";
 import { transitApi } from "../utils/AxiosInstance";
 import { carData } from "../utils/cardetials";
@@ -130,8 +136,8 @@ export default function Signup() {
         </div>
       </section>
       {/* brand section */}
-      <section className="brand_wrapper section_margin">
-        <div className="container">
+      <section className="brand_wrapper section_margin cursor-pointer pe-auto">
+        {/* <div className="container">
           <img
             className="img-fluid"
             src="assests/images/brand_logo/brand_1.svg"
@@ -192,8 +198,81 @@ export default function Signup() {
             alt=""
             srcset=""
           />
-        </div>
+        </div> */}
+        
+      <Swiper
+        className="brand_wrapper section_margin container"
+        slidesPerView={8}
+        spaceBetween={0}
+        pagination={{
+          clickable: true,
+        }}
+        // modules={[Pagination]}
+        // className="mySwiper"
+      >
+        <SwiperSlide>  <img
+            className="img-fluid"
+            src="assests/images/brand_logo/brand_1.svg"
+            alt=""
+            srcset=""
+          /></SwiperSlide>
+        <SwiperSlide> <img
+            className="img-fluid"
+            src="assests/images/brand_logo/nissan.svg"
+            alt=""
+            srcset=""
+          /></SwiperSlide>
+        <SwiperSlide>   <img
+            className="img-fluid"
+            src="assests/images/brand_logo/citroen.svg"
+            alt=""
+            srcset=""
+          /></SwiperSlide>
+        <SwiperSlide>    <img
+            className="img-fluid"
+            src="assests/images/brand_logo/iveco.svg"
+            alt=""
+            srcset=""
+          /></SwiperSlide>
+        <SwiperSlide>    <img
+            className="img-fluid"
+            src="assests/images/brand_logo/ford.svg"
+            alt=""
+            srcset=""
+          /></SwiperSlide>
+        <SwiperSlide>     <img
+            className="img-fluid"
+            src="assests/images/brand_logo/man.svg"
+            alt=""
+            srcset=""
+          /></SwiperSlide>
+        <SwiperSlide>       <img
+            className="img-fluid"
+            src="assests/images/brand_logo/Volkswagen_with_wordmark_2019.png"
+            alt=""
+            srcset=""
+          /></SwiperSlide>
+        <SwiperSlide>      <img
+            className="img-fluid"
+            src="assests/images/brand_logo/brand_1.svg"
+            alt=""
+            srcset=""
+          /></SwiperSlide>
+        <SwiperSlide>         <img
+            className="img-fluid"
+            src="assests/images/brand_logo/peugeot.svg"
+            alt=""
+            srcset=""
+          /></SwiperSlide>
+                  <SwiperSlide>       <img
+            className="img-fluid"
+            src="assests/images/brand_logo/ldv.png"
+            alt=""
+            srcset=""
+          /></SwiperSlide>
+      </Swiper>
       </section>
+
 
       {/* filter section */}
       <SearchOption />
