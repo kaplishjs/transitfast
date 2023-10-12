@@ -138,9 +138,8 @@ function index() {
                       </div>
 
 
-
                       <ul className="ps-3">
-                        {carDetails?.description}
+                        {carDetails?.car_description}
                         {/* <li> 180 Degree Opening Unglazed Asymmetric Rear Doors</li>
                         <li> 6 Floor Mounted Load Securing Rings</li>
                         <li> 6 Load Tie-Down Hooks in Cargo Area</li>
